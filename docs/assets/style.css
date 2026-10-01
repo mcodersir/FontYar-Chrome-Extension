@@ -36,3 +36,36 @@ html[data-theme="light"] .moon-icon{display:block}html[data-theme="light"] .sun-
 .feature-grid-detailed .feature-card li::before{content:"";position:absolute;top:.85em;right:-14px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
 @media(max-width:900px){.feature-grid-detailed{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.screens-section{padding-block:33px 54px}.screens-grid,.feature-grid-detailed{grid-template-columns:1fr}.screen-card>a{min-height:0;padding:7px}.screen-card img{max-height:none}.feature-grid-detailed .feature-card{padding:17px}.feature-grid-detailed .feature-card ul{font-size:10px}}
+
+/* Small, RTL-aware motion: reveals, responsive highlights, and useful feedback */
+.scroll-progress{position:absolute;inset-inline:0;bottom:0;height:2px;overflow:hidden;pointer-events:none}
+#reading-progress-bar{display:block;width:100%;height:100%;transform:scaleX(0);transform-origin:right center;background:var(--accent);box-shadow:0 0 10px var(--accent);will-change:transform}
+.main-nav>a:not(.nav-download){position:relative}
+.main-nav>a:not(.nav-download)::after{content:"";position:absolute;inset-inline:0;bottom:-7px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right center;transition:transform .24s ease}
+.main-nav>a:not(.nav-download):hover::after,.main-nav>a:not(.nav-download):focus-visible::after{transform:scaleX(1)}
+.main-nav>a svg,.button svg,.text-link svg,.footer-link svg{transition:transform .24s cubic-bezier(.2,.75,.25,1)}
+.main-nav>a:hover svg,.button:hover svg,.text-link:hover svg,.footer-link:hover svg{transform:translateX(-3px)}
+.theme-toggle svg{transition:transform .36s cubic-bezier(.2,.75,.25,1)}
+.theme-toggle:hover .sun-icon{transform:rotate(45deg) scale(1.08)}
+.theme-toggle:hover .moon-icon{transform:rotate(-14deg) scale(1.08)}
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-1;top:4%;left:0;width:min(54vw,580px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--soft-accent) 0%,transparent 69%);filter:blur(9px);opacity:.82;pointer-events:none}
+.feature-card,.screen-card{position:relative;isolation:isolate;overflow:hidden}
+.feature-card::before,.screen-card::before{content:"";position:absolute;z-index:0;inset:0;background:radial-gradient(350px circle at var(--spot-x,50%) var(--spot-y,0%),rgba(168,148,255,.14),transparent 76%);opacity:0;pointer-events:none;transition:opacity .24s ease}
+.feature-card:hover::before,.feature-card:focus-within::before,.screen-card:hover::before,.screen-card:focus-within::before{opacity:1}
+.feature-card>* ,.screen-card>*{position:relative;z-index:1}
+.feature-card .feature-icon{transition:transform .28s cubic-bezier(.2,.75,.25,1),border-color .2s,color .2s}
+.feature-card:hover .feature-icon,.feature-card:focus-within .feature-icon{transform:translateY(-2px) rotate(-4deg) scale(1.04);border-color:var(--line-strong)}
+.screen-card img{transition:transform .42s cubic-bezier(.2,.75,.25,1)}
+.screen-card:hover img,.screen-card:focus-within img{transform:scale(1.012)}
+.button-primary,.nav-download{transition:transform .22s cubic-bezier(.2,.75,.25,1),opacity .22s,box-shadow .22s}
+.button-primary:hover,.nav-download:hover{box-shadow:0 7px 24px var(--soft-accent)}
+@media(prefers-reduced-motion:no-preference){
+  .hero::before{animation:yar-aura-drift 13s ease-in-out infinite alternate}
+  html.has-motion [data-reveal]{opacity:0;transform:translate3d(0,20px,0);transition:opacity .58s cubic-bezier(.2,.7,.25,1),transform .68s cubic-bezier(.2,.75,.25,1);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+  html.has-motion [data-reveal="from-right"]{transform:translate3d(24px,0,0)}
+  html.has-motion [data-reveal="from-left"]{transform:translate3d(-24px,0,0)}
+  html.has-motion [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+}
+@keyframes yar-aura-drift{from{transform:translate3d(-8px,8px,0) scale(.96)}to{transform:translate3d(22px,-10px,0) scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.hero::before{animation:none}.scroll-progress,#reading-progress-bar{transition:none!important}.feature-card,.screen-card,.feature-card::before,.screen-card::after,.screen-card::before,.screen-card img,.feature-icon,.theme-toggle svg,.main-nav>a::after{transition:none!important}.feature-card:hover,.feature-card:focus-within,.screen-card:hover,.screen-card:focus-within,.feature-card:hover .feature-icon,.feature-card:focus-within .feature-icon,.screen-card:hover img,.screen-card:focus-within img,.main-nav>a:hover svg,.button:hover svg,.text-link:hover svg,.footer-link:hover svg,.theme-toggle:hover svg,.nav-download:hover,.button-primary:hover{transform:none!important}}
