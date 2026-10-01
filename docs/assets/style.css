@@ -69,3 +69,101 @@ html[data-theme="light"] .moon-icon{display:block}html[data-theme="light"] .sun-
 }
 @keyframes yar-aura-drift{from{transform:translate3d(-8px,8px,0) scale(.96)}to{transform:translate3d(22px,-10px,0) scale(1.04)}}
 @media(prefers-reduced-motion:reduce){.hero::before{animation:none}.scroll-progress,#reading-progress-bar{transition:none!important}.feature-card,.screen-card,.feature-card::before,.screen-card::after,.screen-card::before,.screen-card img,.feature-icon,.theme-toggle svg,.main-nav>a::after{transition:none!important}.feature-card:hover,.feature-card:focus-within,.screen-card:hover,.screen-card:focus-within,.feature-card:hover .feature-icon,.feature-card:focus-within .feature-icon,.screen-card:hover img,.screen-card:focus-within img,.main-nav>a:hover svg,.button:hover svg,.text-link:hover svg,.footer-link:hover svg,.theme-toggle:hover svg,.nav-download:hover,.button-primary:hover{transform:none!important}}
+
+
+/* More lively previews, staggered details, and layouts tuned for tablets */
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 span {
+    background: linear-gradient(105deg, var(--accent), color-mix(in srgb, var(--accent), white 35%), var(--accent));
+    background-size: 220% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: yar-title-glint 7s ease-in-out infinite;
+  }
+  .preview-wrap.is-visible .preview-window {
+    animation: yar-preview-float 6.5s ease-in-out 850ms infinite;
+    transform-origin: 50% 50%;
+  }
+  .preview-wrap.is-visible .preview-line {
+    animation: yar-preview-row .65s cubic-bezier(.2,.75,.25,1) both;
+  }
+  .preview-wrap.is-visible .preview-line:nth-child(3) { animation-delay: 180ms; }
+  .preview-wrap.is-visible .preview-line:nth-child(4) { animation-delay: 280ms; }
+  .preview-wrap.is-visible .preview-site { animation: yar-preview-glow 3.8s ease-in-out 1.2s infinite; }
+  .preview-wrap.is-visible .status-dot { animation: yar-status-pulse 2s ease-out 1.3s infinite; }
+  .feature-card.is-visible li { animation: yar-point-enter .48s cubic-bezier(.2,.75,.25,1) both; animation-delay: calc(100ms + var(--point-index, 0) * 55ms); }
+  .feature-card.is-visible li::before { animation: yar-dot-pop .45s cubic-bezier(.2,.75,.25,1) both; animation-delay: calc(100ms + var(--point-index, 0) * 55ms); }
+  .feature-card.is-visible .feature-icon svg path,
+  .feature-card.is-visible .feature-icon svg circle {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: yar-icon-draw .72s ease-out 150ms forwards;
+  }
+  .steps li.is-visible .step-number { animation: yar-step-pop .5s cubic-bezier(.2,.75,.25,1) both; }
+  .screen-card.is-visible img { animation: yar-image-settle .8s cubic-bezier(.2,.75,.25,1) both; }
+}
+
+.preview-site { position: relative; overflow: hidden; }
+.preview-site::after {
+  content: "";
+  position: absolute;
+  inset: -20% auto -20% 0;
+  width: 28%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+  transform: translateX(450%);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .preview-wrap.is-visible .preview-site::after { animation: yar-preview-sheen 1.15s ease-out 1s both; }
+}
+@keyframes yar-title-glint { 0%, 100% { background-position: 100% 50%; } 50% { background-position: 0 50%; } }
+@keyframes yar-preview-float { 0%, 100% { transform: translateY(0) rotate(-1.3deg); } 50% { transform: translateY(-8px) rotate(-.45deg); } }
+@keyframes yar-preview-row { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes yar-preview-glow { 0%, 100% { box-shadow: 0 0 0 rgba(168,148,255,0); } 50% { box-shadow: 0 0 26px var(--soft-accent); } }
+@keyframes yar-status-pulse { 0% { box-shadow: 0 0 0 0 rgba(86,201,145,.5); } 70%, 100% { box-shadow: 0 0 0 7px rgba(86,201,145,0); } }
+@keyframes yar-preview-sheen { to { transform: translateX(-450%); } }
+@keyframes yar-point-enter { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes yar-dot-pop { from { opacity: 0; scale: .35; } to { opacity: 1; scale: 1; } }
+@keyframes yar-icon-draw { to { stroke-dashoffset: 0; } }
+@keyframes yar-step-pop { 0% { transform: scale(.72); box-shadow: 0 0 0 0 var(--soft-accent); } 70% { transform: scale(1.08); box-shadow: 0 0 0 8px transparent; } 100% { transform: scale(1); } }
+@keyframes yar-image-settle { from { filter: saturate(.75); transform: scale(1.025); } to { filter: saturate(1); transform: scale(1); } }
+
+@media (hover: hover) and (pointer: fine) {
+  .feature-card, .screen-card { transition: transform .32s cubic-bezier(.2,.75,.25,1), border-color .24s, box-shadow .32s; }
+  .feature-card:hover { transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px); box-shadow: 0 16px 38px rgba(0,0,0,.14); }
+  .screen-card:hover { transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,.18); }
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; padding-block: 58px 56px; gap: 34px; }
+  .hero-copy { max-width: 650px; }
+  .hero h1 { font-size: clamp(42px, 8vw, 55px); }
+  .preview-wrap { max-width: 500px; }
+  .feature-grid-detailed { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .install-layout { grid-template-columns: 1fr; gap: 32px; }
+  .install-intro { position: static; }
+  .install-intro > p { max-width: 600px; }
+}
+@media (max-width: 520px) {
+  .screens-grid { grid-template-columns: 1fr; }
+  .section-heading h2 { max-width: 100%; }
+  .step-download { white-space: normal; overflow-wrap: anywhere; text-align: left; }
+  .faq-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .container { width: calc(100% - 26px); }
+  .brand { gap: 7px; }
+  .brand small { display: none; }
+  .main-nav { gap: 5px; }
+  .main-nav > a[href="#install"] { font-size: 9px; }
+  .nav-download { padding-inline: 8px; font-size: 9px; }
+  .hero h1 { font-size: 40px; }
+  .hero-actions .button { flex: 1 1 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 span { animation: none; background: none; color: var(--accent); }
+  .preview-site::after { display: none; }
+  .feature-card:hover, .screen-card:hover { transform: none !important; }
+}

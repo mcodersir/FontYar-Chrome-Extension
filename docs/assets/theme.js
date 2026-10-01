@@ -18,7 +18,7 @@
   function apply(value) {
     root.dataset.theme = value;
     toggle?.setAttribute("aria-pressed", String(value === "dark"));
-    if (label) label.textContent = value === "dark" ? "پوستهٔ روشن" : "پوستهٔ تیره";
+    if (label) label.textContent = value === "dark" ? "روشنش کن" : "تاریکش کن";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", value === "dark" ? "#09090b" : "#f5f4f1");
   }
 })();

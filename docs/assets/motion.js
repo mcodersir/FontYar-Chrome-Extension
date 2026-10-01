@@ -23,6 +23,9 @@
   if (reducedMotion.matches) return;
 
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
+  document.querySelectorAll(".feature-card ul").forEach(list => {
+    [...list.children].forEach((item, index) => item.style.setProperty("--point-index", index));
+  });
   if ("IntersectionObserver" in window && revealItems.length) {
     const observer = new IntersectionObserver((entries, activeObserver) => {
       for (const entry of entries) {
@@ -45,8 +48,16 @@
     document.querySelectorAll(".screen-card, .feature-card").forEach(card => {
       card.addEventListener("pointermove", event => {
         const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width;
+        const y = (event.clientY - bounds.top) / bounds.height;
         card.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
         card.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
+        card.style.setProperty("--tilt-x", `${(0.5 - y) * 2.4}deg`);
+        card.style.setProperty("--tilt-y", `${(x - 0.5) * 2.4}deg`);
+      }, { passive: true });
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--tilt-x", "0deg");
+        card.style.setProperty("--tilt-y", "0deg");
       }, { passive: true });
     });
   }

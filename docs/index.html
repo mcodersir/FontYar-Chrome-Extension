@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#09090b">
-  <meta name="description" content="پرشین‌یار؛ افزونه‌ای برای تنظیم فونت، ایموجی و ظاهر سایت‌ها. دریافت افزونه و راهنمای قدم‌به‌قدم نصب در Chrome.">
+  <meta name="description" content="پرشین‌یار کمک می‌کنه فونت و ظاهر سایت‌ها رو به سلیقهٔ خودت تنظیم کنی. افزونه رو بگیر و قدم‌به‌قدم نصبش کن.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fa_IR">
-  <meta property="og:title" content="پرشین‌یار | وب را به سلیقهٔ خودت تنظیم کن">
-  <meta property="og:description" content="فونت و ظاهر هر سایت را شخصی‌سازی کن. نصب آسان افزونهٔ پرشین‌یار در Chrome.">
+  <meta property="og:title" content="پرشین‌یار | وب رو همون‌جوری ببین که دوست داری">
+  <meta property="og:description" content="فونت و ظاهر هر سایت رو خودت تنظیم کن؛ نصب پرشین‌یار هم قدم‌به‌قدم یادت می‌دیم.">
   <meta property="og:url" content="https://mcodersir.github.io/FontYar-Chrome-Extension/">
   <meta property="og:image" content="https://mcodersir.github.io/FontYar-Chrome-Extension/assets/icon-128.png">
   <link rel="canonical" href="https://mcodersir.github.io/FontYar-Chrome-Extension/">
   <link rel="icon" href="assets/icon-48.png" type="image/png">
   <link rel="preload" href="assets/fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=20261001-motion">
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"SoftwareApplication","name":"PersianYar - پرشین‌یار","applicationCategory":"BrowserApplication","operatingSystem":"Chrome and Chromium-based browsers","inLanguage":"fa-IR","softwareVersion":"1.0.0","downloadUrl":"https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest/download/PersianYar-Chrome-Extension-v1.0.0.zip","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
-  <title>پرشین‌یار | وب را به سلیقهٔ خودت تنظیم کن</title>
+  <title>پرشین‌یار | وب رو همون‌جوری ببین که دوست داری</title>
 </head>
 <body>
   <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
@@ -26,17 +26,17 @@
     <div class="container nav-row">
       <a class="brand" href="#top" aria-label="پرشین‌یار، صفحهٔ اصلی">
         <img src="assets/logo.svg" alt="" width="42" height="42">
-        <span><strong>پرشین‌یار</strong><small>وب، به زبان خودت</small></span>
+        <span><strong>پرشین‌یار</strong><small>وب، همون‌جوری که دوست داری</small></span>
       </a>
       <nav class="main-nav" aria-label="ناوبری اصلی">
         <a href="#features">امکانات</a>
-        <a href="#screens">تصاویر محیط</a>
-        <a href="#install">راهنمای نصب</a>
-        <a href="#faq">پرسش‌ها</a>
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="تغییر پوستهٔ رنگی" aria-pressed="true" title="تغییر پوسته">
+        <a href="#screens">عکس‌های افزونه</a>
+        <a href="#install">نصبش کن</a>
+        <a href="#faq">سؤال‌ها</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="عوض‌کردن پوستهٔ سایت" aria-pressed="true" title="عوض‌کردن پوسته">
           <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
           <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"/><path d="M16 3v4m-2-2h4"/></svg>
-          <span id="theme-label">پوستهٔ روشن</span>
+          <span id="theme-label">روشنش کن</span>
         </button>
         <a class="nav-download" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest/download/PersianYar-Chrome-Extension-v1.0.0.zip">
           دریافت افزونه
@@ -50,68 +50,68 @@
   <main id="main">
     <section class="hero container" id="top" aria-labelledby="hero-title">
       <div class="hero-copy" data-reveal="from-right">
-        <div class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> ابزار شخصی‌سازی وب</div>
-        <h1 id="hero-title">هر سایت،<br><span>با حال‌وهوای خودت.</span></h1>
-        <p class="hero-lead">فونت فارسی دلخواهت را انتخاب کن، ظاهر سایت‌ها را تنظیم کن و تجربهٔ وب را خواناتر بساز. پرشین‌یار برای هر دامنه تنظیمات جداگانه نگه می‌دارد.</p>
+        <div class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> یه ابزار برای وب‌گردی راحت‌تر</div>
+        <h1 id="hero-title">هر سایتی،<br><span>همون‌جوری که دوست داری.</span></h1>
+        <p class="hero-lead">فونتی که باهاش راحتی رو انتخاب کن، اندازه و حال‌وهوای صفحه رو تغییر بده و وب‌گردی رو برای خودت خواناتر کن. تنظیم‌های هر سایت هم جدا می‌مونه.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest/download/PersianYar-Chrome-Extension-v1.0.0.zip">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
-            دانلود برای Chrome
+            افزونه رو برای Chrome بگیر
           </a>
           <a class="button button-secondary" href="https://github.com/mcodersir/FontYar-Chrome-Extension" target="_blank" rel="noopener noreferrer">
-            دیدن کد در GitHub
+            کدش رو توی GitHub ببین
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
           </a>
         </div>
-        <p class="hero-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg> تنظیمات ذخیره‌شده بدون باز کردن پنجرهٔ افزونه روی سایت‌ها اعمال می‌شوند.</p>
+        <p class="hero-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg> از این به بعد تنظیم‌هات خودکار روی سایت‌ها اعمال می‌شن؛ لازم نیست هر بار پنجرهٔ افزونه رو باز کنی.</p>
       </div>
 
       <div class="preview-wrap" aria-label="پیش‌نمایش تنظیمات پرشین‌یار" data-reveal="from-left">
         <div class="preview-window">
           <div class="preview-top"><span class="window-dots"><i></i><i></i><i></i></span><span class="preview-url" dir="ltr">example.com</span><span class="preview-mark">فـ</span></div>
-          <div class="preview-heading"><div><span class="tiny-label">تایپوگرافی این سایت</span><strong>سایت را فارسی‌تر بخوان</strong></div><span class="toggle-on" aria-hidden="true"><i></i></span></div>
-          <div class="preview-line"><span class="preview-symbol">A</span><div><strong>فونت فارسی</strong><small>Vazirmatn · خوانا و ساده</small></div><span class="chevron" aria-hidden="true">⌄</span></div>
-          <div class="preview-line"><span class="preview-symbol">Aa</span><div><strong>اندازهٔ متن</strong><small>متناسب با سلیقهٔ تو</small></div><span class="size-chip">۱۷px</span></div>
-          <div class="preview-site"><span class="preview-site-kicker">نمونهٔ متن</span><strong>یک وبِ خواناتر، با فونت دلخواه تو.</strong><span>این تنظیمات فقط برای همین سایت ذخیره می‌شود.</span></div>
-          <div class="preview-footer"><span><i class="status-dot"></i> روی این سایت روشن</span><span>پرشین‌یار</span></div>
+          <div class="preview-heading"><div><span class="tiny-label">تنظیم‌های همین سایت</span><strong>این سایت رو راحت‌تر بخون</strong></div><span class="toggle-on" aria-hidden="true"><i></i></span></div>
+          <div class="preview-line"><span class="preview-symbol">A</span><div><strong>فونت دلخواه</strong><small>Vazirmatn · خوانا و ساده</small></div><span class="chevron" aria-hidden="true">⌄</span></div>
+          <div class="preview-line"><span class="preview-symbol">Aa</span><div><strong>اندازهٔ متن</strong><small>همونی که خودت می‌پسندی</small></div><span class="size-chip">۱۷px</span></div>
+          <div class="preview-site"><span class="preview-site-kicker">نمونهٔ متن</span><strong>وب رو با فونتی بخون که دوستش داری.</strong><span>این تنظیم فقط برای همین سایت می‌مونه.</span></div>
+          <div class="preview-footer"><span><i class="status-dot"></i> برای این سایت روشنه</span><span>پرشین‌یار</span></div>
         </div>
-        <span class="preview-caption">یک تنظیم ساده؛ تجربه‌ای که مال خودت است.</span>
+        <span class="preview-caption">یه تنظیم کوچیک، یه وب‌گردی راحت‌تر.</span>
       </div>
     </section>
 
     <section class="screens-section container" id="screens" aria-labelledby="screens-title">
-      <div class="section-heading" data-reveal><div><span class="eyebrow">از نزدیک ببین</span><h2 id="screens-title">محیط پرشین‌یار</h2></div><p>چهار بخش اصلی افزونه در یک نگاه.</p></div>
+      <div class="section-heading" data-reveal><div><span class="eyebrow">یه نگاه نزدیک‌تر</span><h2 id="screens-title">محیط پرشین‌یار</h2></div><p>اینم چهار تا از بخش‌های اصلی افزونه.</p></div>
       <div class="screens-grid">
-        <figure class="screen-card" data-reveal><a href="assets/screenshots/text-and-fonts.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات متن و فونت"><img src="assets/screenshots/text-and-fonts.png" alt="تنظیم تایپوگرافی سایت و انتخاب فونت برای زبان‌های مختلف در پرشین‌یار" width="691" height="757" loading="lazy" decoding="async"></a><figcaption><strong>متن و فونت</strong><span>انتخاب فونت و تنظیم تایپوگرافی بر اساس زبان</span></figcaption></figure>
-        <figure class="screen-card" data-reveal><a href="assets/screenshots/persian-localization.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات بومی‌سازی فارسی"><img src="assets/screenshots/persian-localization.png" alt="گزینه‌های بومی‌سازی فارسی، نیم‌فاصله و اصلاح چیدمان متن در پرشین‌یار" width="702" height="755" loading="lazy" decoding="async"></a><figcaption><strong>بومی‌سازی فارسی</strong><span>گزینه‌های نگارش فارسی و اصلاح متن‌های ترکیبی</span></figcaption></figure>
-        <figure class="screen-card" data-reveal><a href="assets/screenshots/appearance-and-cursor.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات ظاهر سایت و نشانگر"><img src="assets/screenshots/appearance-and-cursor.png" alt="تنظیمات ظاهر سایت شامل دارک مود هوشمند، شیشه‌ای، استایل خطی و نشانگر ماوس" width="703" height="753" loading="lazy" decoding="async"></a><figcaption><strong>ظاهر و نشانگر</strong><span>شخصی‌سازی سبک بصری سایت و نشانگر ماوس</span></figcaption></figure>
-        <figure class="screen-card" data-reveal><a href="assets/screenshots/extension-settings.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات افزونه"><img src="assets/screenshots/extension-settings.png" alt="پنل تنظیمات پرشین‌یار با انتخاب پوسته، زبان و اندازهٔ فونت افزونه" width="691" height="746" loading="lazy" decoding="async"></a><figcaption><strong>تنظیمات افزونه</strong><span>انتخاب پوسته و زبان و مدیریت سایت‌ها</span></figcaption></figure>
+        <figure class="screen-card" data-reveal><a href="assets/screenshots/text-and-fonts.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات متن و فونت"><img src="assets/screenshots/text-and-fonts.png" alt="تنظیم تایپوگرافی سایت و انتخاب فونت برای زبان‌های مختلف در پرشین‌یار" width="691" height="757" loading="lazy" decoding="async"></a><figcaption><strong>متن و فونت</strong><span>فونت‌های جدا برای زبان‌های مختلف</span></figcaption></figure>
+        <figure class="screen-card" data-reveal><a href="assets/screenshots/persian-localization.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات بومی‌سازی فارسی"><img src="assets/screenshots/persian-localization.png" alt="گزینه‌های بومی‌سازی فارسی، نیم‌فاصله و اصلاح چیدمان متن در پرشین‌یار" width="702" height="755" loading="lazy" decoding="async"></a><figcaption><strong>بومی‌سازی فارسی</strong><span>نوشتن فارسی و مرتب‌کردن متن‌های قاطی‌پاطی</span></figcaption></figure>
+        <figure class="screen-card" data-reveal><a href="assets/screenshots/appearance-and-cursor.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات ظاهر سایت و نشانگر"><img src="assets/screenshots/appearance-and-cursor.png" alt="تنظیمات ظاهر سایت شامل دارک مود هوشمند، شیشه‌ای، استایل خطی و نشانگر ماوس" width="703" height="753" loading="lazy" decoding="async"></a><figcaption><strong>ظاهر و نشانگر</strong><span>تغییر ظاهر سایت و شکل نشانگر ماوس</span></figcaption></figure>
+        <figure class="screen-card" data-reveal><a href="assets/screenshots/extension-settings.png" target="_blank" rel="noopener noreferrer" aria-label="دیدن تصویر کامل تنظیمات افزونه"><img src="assets/screenshots/extension-settings.png" alt="پنل تنظیمات پرشین‌یار با انتخاب پوسته، زبان و اندازهٔ فونت افزونه" width="691" height="746" loading="lazy" decoding="async"></a><figcaption><strong>تنظیمات افزونه</strong><span>پوسته و زبان افزونه رو عوض کن، سایت‌هات رو هم مدیریت کن</span></figcaption></figure>
       </div>
-      <p class="screens-hint">برای دیدن هر تصویر در اندازهٔ کامل، روی آن کلیک کن.</p>
+      <p class="screens-hint">روی هر عکس بزنی، بزرگ‌تر و کامل‌تر می‌بینیش.</p>
     </section>
 
     <section class="feature-section container" id="features" aria-labelledby="features-title">
-      <div class="section-heading" data-reveal><div><span class="eyebrow">امکانات افزونه</span><h2 id="features-title">وب را مطابق سلیقه‌ات تنظیم کن</h2></div><p>تنظیمات هر بخش را جداگانه روشن یا خاموش کن.</p></div>
+      <div class="section-heading" data-reveal><div><span class="eyebrow">چه کارهایی ازش برمیاد؟</span><h2 id="features-title">وب رو به سلیقهٔ خودت دربیار</h2></div><p>هرکدوم از این گزینه‌ها رو خواستی، جدا روشن یا خاموش کن.</p></div>
       <div class="feature-grid feature-grid-detailed">
-        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V4h16v3M12 4v16m-5 0h10"/></svg></span><h3>فونت و تایپوگرافی</h3><p>از میان ۴۲ فونت انتخاب کن؛ برای فارسی، انگلیسی، عربی و چینی فونت جدا بگذار یا یک فونت را برای همهٔ زبان‌ها انتخاب کن.</p><ul><li>افزایش اندازهٔ متن‌ها و رقم‌ها بر اساس اندازهٔ فعلی‌شان</li><li>انتخاب وزن معمولی و ضخیم و حفظ ترازبندی سایت یا تغییر آن</li><li>نمایش رقم فارسی، لاتین یا عربی، یا حفظ شکل اصلی</li><li>سبک‌های ایموجی از جمله Android، Windows، Apple-compatible، Twemoji، Fluent، OpenMoji و Blobmoji؛ همراه با پیش‌نمایش و کش</li></ul></article>
-        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h16"/><path d="m17 10 3 2-3 2"/></svg></span><h3>بومی‌سازی فارسی</h3><p>خواندن رابط سایت‌ها را برای فارسی‌زبان‌ها راحت‌تر کن. ابزارهای نگارشی و چیدمان را برای هر سایت مستقل کنترل کن.</p><ul><li>ترجمهٔ آفلاین عبارت‌های رابطِ شناخته‌شده در سایت‌های پشتیبانی‌شده و فقط هنگام تطبیق دقیق</li><li>حفظ، حذف، تبدیل به فاصله یا افزودن هوشمند نیم‌فاصله</li><li>اصلاح جهت متن‌های ترکیبی راست‌به‌چپ و چپ‌به‌راست</li><li>بهبود چیدمان فارسی و راست‌چین خودکار (آزمایشی)</li><li>محافظت از متن کاربران، آیکون‌ها، کد و SVG</li><li>امکان اعمال تنظیمات دامنه روی زیردامنه‌ها</li></ul></article>
-        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg></span><h3>ظاهر سایت</h3><p>جلوه‌های ظاهری اختیاری را مستقل کنترل کن؛ گزینه‌ها برای شخصی‌سازی هر سایت طراحی شده‌اند.</p><ul><li>دارک مود هوشمند با سبک‌های آماده یا رنگ‌های دلخواه پس‌زمینه، متن، تأکید و خط</li><li>تنظیم روشنایی، کنتراست، گرمی و خنثی‌سازی رنگ</li><li>شیشهٔ مایع با تنظیم ته‌رنگ، محوشدگی، شفافیت و اشباع</li><li>استایل خطی با تنظیم رنگ، شدت و ضخامت حاشیه‌ها</li><li>منوهای هماهنگ‌تر، حلقهٔ فوکوس و فیلدهای ورودی قابل تنظیم</li><li>گرد کردن کنترل‌های تیز یا یکسان‌سازی شعاع گوشه‌ها</li><li>حذف سایه‌های متن و جعبه و پیمایش نرم صفحه</li></ul></article>
-        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l5-5 3 6 3-1-3-6h7L5 3Z"/></svg></span><h3>نشانگر ماوس دلخواه</h3><p>از میان ۴۲ بستهٔ نشانگر، شکل دلخواهت را جست‌وجو و انتخاب کن. پیش‌نمایش‌ها به‌صورت تنبل بارگذاری و برای استفادهٔ دوباره ذخیره می‌شوند.</p><ul><li>تنظیم اندازهٔ نشانگر از ۱۶ تا ۹۶ پیکسل</li><li>انتخاب حرکت دقیق، نرم یا شناور</li><li>تنظیم دنباله و بازخورد کلیک، بزرگ‌نمایی هنگام رفتن روی هدف و درخشش ملایم</li></ul></article>
-        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5l2 2"/><path d="M20 4v5h-5M20 12a8 8 0 0 1-14 5l-2-2"/><path d="M4 20v-5h5"/></svg></span><h3>حرکت و بازخورد</h3><p>حرکت‌های رابط را جداگانه روشن و خاموش کن؛ پرشین‌یار به تنظیم کاهش حرکت سیستم‌عامل احترام می‌گذارد.</p><ul><li>حالت Hover و Focus، مکث راهنماها و باز شدن منو از نقطهٔ تعامل</li><li>ورود مرحله‌ای و محوشدن فهرست‌ها، و محوشدن Placeholderهای بارگذاری</li><li>تغییر نرم متن، وضعیت و آیکون‌ها و Morph کنترل‌ها و اسلایدرها</li><li>پیوستگی حرکت منوها و جابه‌جایی تصویر میان فهرست و جزئیات</li><li>بازخورد فشردن دکمه و جلوگیری از بسته‌شدن زودهنگام منو با حرکت ماوس</li><li>ثبات عرض عددها در شمارنده‌ها، قیمت‌ها و تایمرها و محوشدن لبهٔ فهرست‌های پیمایشی</li></ul></article>
-        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18m0-18a15 15 0 0 0 0 18"/></svg></span><h3>مدیریت سایت و تنظیمات</h3><p>برای هر دامنه تنظیم جدا نگه دار و کنترل کن پرشین‌یار کجا فعال باشد. تنظیمات ذخیره‌شده خودکار روی سایت اعمال می‌شوند.</p><ul><li>توقف موقت و فعال‌سازی دوبارهٔ تنظیمات یک سایت</li><li>جست‌وجو و حذف سایت‌های ذخیره‌شده و پشتیبانی از زیردامنه‌ها</li><li>پشتیبان‌گیری و بازیابی تنظیمات با فایل JSON، همراه با ادغام</li><li>پوستهٔ روشن، تیره یا پیروی از سیستم؛ رابط فارسی، انگلیسی، عربی یا چینی</li><li>تنظیم اندازهٔ فونت محیط افزونه</li></ul></article>
+        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V4h16v3M12 4v16m-5 0h10"/></svg></span><h3>فونت و تایپوگرافی</h3><p>از بین ۴۲ فونت یکی رو بردار. می‌تونی برای فارسی، انگلیسی، عربی و چینی فونت جدا بذاری یا همه رو با یه فونت ببینی.</p><ul><li>متن و عددها رو درشت‌تر کن؛ اندازهٔ جدید با اندازهٔ فعلی‌شون هماهنگه.</li><li>فونت رو معمولی یا ضخیم کن؛ چینش نوشته‌ها رو هم نگه دار یا عوضش کن.</li><li>رقم‌ها رو فارسی، لاتین یا عربی ببین، یا بذار شکل اصلی‌شون بمونه.</li><li>ایموجی‌ها رو از بین سبک‌های Android، Windows، Apple-compatible، Twemoji، Fluent، OpenMoji و Blobmoji انتخاب کن؛ پیش‌نمایش‌هاش هم فقط وقتی لازم باشن بارگذاری می‌شن و برای دفعات بعد می‌مونن.</li></ul></article>
+        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h16"/><path d="m17 10 3 2-3 2"/></svg></span><h3>بومی‌سازی فارسی</h3><p>با چند تا ابزار نگارشی و چیدمان، خوندن سایت‌ها رو برای فارسی‌زبان‌ها راحت‌تر کن. تنظیم‌هاش هم برای هر سایت جداست.</p><ul><li>عبارت‌های مشخصِ رابط کاربری رو آفلاین فارسی می‌کنه؛ فقط وقتی دقیقاً با موارد پشتیبانی‌شده جور دربیان.</li><li>نیم‌فاصله رو نگه دار، حذفش کن، جاش فاصله بذار یا بذار افزونه خودش درستش کنه.</li><li>جهت نوشته‌هایی رو که فارسی و انگلیسی قاطی دارن درست می‌کنه (RTL/LTR).</li><li>راست‌چین شدن خودکار صفحه و مرتب‌تر شدن چیدمان فارسی (آزمایشی).</li><li>متنی که کاربر نوشته، آیکون‌ها، کد و SVG رو دست‌نخورده نگه می‌داره.</li><li>تنظیم‌های یه دامنه رو برای زیردامنه‌هاش هم اجرا کن.</li></ul></article>
+        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg></span><h3>ظاهر سایت</h3><p>هر جلوه رو جدا روشن کن تا ظاهر هر سایت رو همون‌جوری دربیاری که می‌خوای.</p><ul><li>حالت تاریک هوشمند رو با مدل‌های آماده یا رنگ دلخواهت برای پس‌زمینه، نوشته، تأکید و خط تنظیم کن.</li><li>روشنایی، کنتراست و گرمی رنگ‌ها رو کم‌وزیاد کن یا رنگ‌ها رو خنثی‌تر کن.</li><li>افکت شیشه‌ای رو با ته‌رنگ، محوشدگی، شفافیت و شدت رنگ دلخواهت تنظیم کن.</li><li>به بخش‌های سایت خط دور بده و رنگ، شدت و ضخامت خط دورش رو خودت انتخاب کن.</li><li>منوها رو هماهنگ‌تر کن؛ دور کنترل‌ها حلقهٔ فوکوس بذار و ورودی‌ها رو هم تنظیم کن.</li><li>گوشه‌های تیز رو گرد کن یا همهٔ گوشه‌ها رو یه‌شکل دربیار.</li><li>سایهٔ نوشته‌ها و کادرها رو بردار و کاری کن صفحه نرم‌تر پیمایش بشه.</li></ul></article>
+        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l5-5 3 6 3-1-3-6h7L5 3Z"/></svg></span><h3>نشانگر ماوس دلخواه</h3><p>از بین ۴۲ بستهٔ نشانگر بگرد و هرکدوم رو خواستی انتخاب کن. پیش‌نمایش‌ها فقط وقتی لازم باشن بارگذاری می‌شن و برای دفعهٔ بعد هم می‌مونن.</p><ul><li>اندازهٔ نشانگر رو از ۱۶ تا ۹۶ پیکسل تنظیم کن.</li><li>حرکت دقیق، نرم یا شناور رو انتخاب کن.</li><li>دنباله و افکت کلیک رو تنظیم کن؛ نشانگر رو موقع رفتن روی هدف بزرگ کن یا یه درخشش ملایم بهش بده.</li></ul></article>
+        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5l2 2"/><path d="M20 4v5h-5M20 12a8 8 0 0 1-14 5l-2-2"/><path d="M4 20v-5h5"/></svg></span><h3>حرکت و بازخورد</h3><p>افکت‌های حرکتی رو دونه‌دونه روشن یا خاموش کن. اگه دستگاهت روی کاهش حرکت تنظیم شده باشه، پرشین‌یار هم همون رو رعایت می‌کنه.</p><ul><li>افکت وقتی ماوس رو می‌بری روی چیزی یا روش فوکوس می‌ذاری، تأخیر راهنماها و باز شدن منو از همون نقطه‌ای که روش کلیک کردی.</li><li>فهرست‌ها مرحله‌به‌مرحله وارد صفحه می‌شن و جای خالی‌های موقع بارگذاری (Placeholder) هم نرم محو می‌شن.</li><li>تغییر نرم نوشته، وضعیت و آیکون‌ها؛ حرکت کنترل‌ها و اسلایدرها هم روان‌تر می‌شه.</li><li>منوها موقع باز و بسته‌شدن پیوسته حرکت می‌کنن و تصویر هم بین فهرست و جزئیات جابه‌جا می‌شه.</li><li>دکمه‌ها موقع کلیک واکنش نشون می‌دن و منو با یه تکون ماوس زود نمی‌پره.</li><li>عددهای شمارنده، قیمت و تایمر سر جاشون می‌مونن؛ لبهٔ فهرست‌های پیمایشی هم نرم محو می‌شه.</li></ul></article>
+        <article class="feature-card" data-reveal><span class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18m0-18a15 15 0 0 0 0 18"/></svg></span><h3>مدیریت سایت و تنظیمات</h3><p>تنظیم هر سایت جدا می‌مونه و خودت انتخاب می‌کنی پرشین‌یار کجا روشن باشه. بعدش تنظیم‌هات هر بار خودکار اجرا می‌شن.</p><ul><li>تنظیم‌های یه سایت رو موقت خاموش کن و هر وقت خواستی دوباره روشنشون کن.</li><li>سایت‌های ذخیره‌شده رو بگرد یا پاک کن؛ زیردامنه‌ها رو هم پوشش بده.</li><li>از تنظیم‌هات فایل JSON پشتیبان بگیر و هر وقت خواستی برشون گردون یا با تنظیم‌های فعلی ادغامشون کن.</li><li>پوستهٔ روشن، تیره یا هماهنگ با سیستم رو انتخاب کن؛ زبان افزونه رو هم فارسی، انگلیسی، عربی یا چینی بذار.</li><li>اندازهٔ نوشته‌های خود افزونه رو هم عوض کن.</li></ul></article>
       </div>
     </section>
 
     <section class="install-section" id="install" aria-labelledby="install-title">
       <div class="container install-layout">
-        <div class="install-intro" data-reveal="from-right"><span class="eyebrow">کمتر از چند دقیقه</span><h2 id="install-title">نصب، قدم‌به‌قدم</h2><p>پرشین‌یار را یک بار به Chrome اضافه کن. بعد از آن، تنظیمات ذخیره‌شده‌ات خودکار روی سایت‌های انتخابی اجرا می‌شوند.</p><a class="text-link" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest">مشاهدهٔ همهٔ نسخه‌ها در GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a></div>
+        <div class="install-intro" data-reveal="from-right"><span class="eyebrow">چند دقیقه بیشتر طول نمی‌کشه</span><h2 id="install-title">بیا قدم‌به‌قدم نصبش کنیم</h2><p>فقط یه بار پرشین‌یار رو به Chrome اضافه کن؛ بعدش تنظیم‌هایی که ذخیره کردی، خودشون روی سایت‌های انتخابی اجرا می‌شن.</p><a class="text-link" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest">همهٔ نسخه‌ها رو توی GitHub ببین <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a></div>
         <ol class="steps">
-          <li data-reveal><span class="step-number">۰۱</span><div><h3>فایل افزونه را بگیر</h3><p>نسخهٔ ZIP را از دکمهٔ دانلود دریافت کن.</p><a class="step-download" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest/download/PersianYar-Chrome-Extension-v1.0.0.zip">دانلود PersianYar-Chrome-Extension-v1.0.0.zip <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></a></div></li>
-          <li data-reveal><span class="step-number">۰۲</span><div><h3>فایل ZIP را استخراج کن</h3><p>روی فایل دانلودشده کلیک راست کن و <bdi dir="ltr">Extract All</bdi> را بزن. پوشهٔ استخراج‌شده را در جایی ثابت نگه دار.</p></div></li>
-          <li data-reveal><span class="step-number">۰۳</span><div><h3>صفحهٔ افزونه‌های Chrome را باز کن</h3><p>این نشانی را در نوار آدرس وارد کن:</p><code class="address-code" dir="ltr">chrome://extensions</code></div></li>
-          <li data-reveal><span class="step-number">۰۴</span><div><h3>Developer mode را روشن کن</h3><p>کلید <bdi dir="ltr">Developer mode</bdi> را در گوشهٔ صفحهٔ افزونه‌ها فعال کن.</p></div></li>
-          <li data-reveal><span class="step-number">۰۵</span><div><h3>پوشهٔ افزونه را بارگذاری کن</h3><p>روی <bdi dir="ltr">Load unpacked</bdi> بزن و پوشه‌ای را انتخاب کن که فایل <bdi dir="ltr">manifest.json</bdi> داخل آن است. خود فایل ZIP را انتخاب نکن.</p></div></li>
-          <li data-reveal><span class="step-number">۰۶</span><div><h3>افزونه را باز و سنجاق کن</h3><p>از منوی Extensions، پرشین‌یار را باز کن و تنظیم‌های سایت را انتخاب کن. برای دسترسی سریع، آیکونش را با Pin در نوار ابزار نگه دار.</p></div></li>
+          <li data-reveal><span class="step-number">۰۱</span><div><h3>فایل افزونه رو دانلود کن</h3><p>فایل ZIP رو از دکمهٔ دانلود بگیر.</p><a class="step-download" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest/download/PersianYar-Chrome-Extension-v1.0.0.zip">دانلود PersianYar-Chrome-Extension-v1.0.0.zip <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></a></div></li>
+          <li data-reveal><span class="step-number">۰۲</span><div><h3>فایل ZIP رو از حالت فشرده دربیار</h3><p>روی فایل دانلودشده راست‌کلیک کن و <bdi dir="ltr">Extract All</bdi> رو بزن. پوشه‌ای که ساخته می‌شه رو جایی بذار که بعداً جابه‌جاش نکنی.</p></div></li>
+          <li data-reveal><span class="step-number">۰۳</span><div><h3>برو به صفحهٔ افزونه‌های Chrome</h3><p>این آدرس رو توی نوار آدرس وارد کن:</p><code class="address-code" dir="ltr">chrome://extensions</code></div></li>
+          <li data-reveal><span class="step-number">۰۴</span><div><h3>Developer mode رو روشن کن</h3><p>گزینهٔ <bdi dir="ltr">Developer mode</bdi> رو از گوشهٔ صفحهٔ افزونه‌ها روشن کن.</p></div></li>
+          <li data-reveal><span class="step-number">۰۵</span><div><h3>پوشهٔ افزونه رو بارگذاری کن</h3><p>روی <bdi dir="ltr">Load unpacked</bdi> بزن و همون پوشه‌ای رو انتخاب کن که فایل <bdi dir="ltr">manifest.json</bdi> توشه. حواست باشه خود ZIP رو انتخاب نکنی.</p></div></li>
+          <li data-reveal><span class="step-number">۰۶</span><div><h3>افزونه رو باز کن و سنجاقش کن</h3><p>از منوی Extensions، پرشین‌یار رو باز کن و تنظیم‌های سایت رو بچین. برای اینکه دم دستت باشه، آیکونش رو با Pin به نوار ابزار سنجاق کن.</p></div></li>
         </ol>
       </div>
     </section>
@@ -119,23 +119,23 @@
     <section class="release-section container" aria-labelledby="release-title">
       <div class="release-card" data-reveal>
         <span class="release-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></span>
-        <div class="release-copy"><span class="eyebrow">نسخهٔ پایدار</span><h2 id="release-title">پرشین‌یار v1.0.0</h2><p>نسخهٔ آمادهٔ نصب، همراه با کد منبع و یادداشت‌های انتشار در GitHub.</p></div>
-        <a class="button button-primary" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest/download/PersianYar-Chrome-Extension-v1.0.0.zip">دانلود نسخه <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></a>
+        <div class="release-copy"><span class="eyebrow">نسخهٔ آمادهٔ استفاده</span><h2 id="release-title">پرشین‌یار v1.0.0</h2><p>نسخه‌ای که همین الان می‌تونی نصبش کنی؛ کد و توضیحات تغییراتش هم توی GitHub هست.</p></div>
+        <a class="button button-primary" href="https://github.com/mcodersir/FontYar-Chrome-Extension/releases/latest/download/PersianYar-Chrome-Extension-v1.0.0.zip">دانلودش کن <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></a>
       </div>
     </section>
 
     <section class="faq-section container" id="faq" aria-labelledby="faq-title">
-      <div class="section-heading"><div><span class="eyebrow">پاسخ کوتاه</span><h2 id="faq-title">پرسش‌های رایج</h2></div></div>
+      <div class="section-heading"><div><span class="eyebrow">چند تا سؤال پرتکرار</span><h2 id="faq-title">سؤال‌های رایج</h2></div></div>
       <div class="faq-grid">
-        <article class="faq-item" data-reveal><h3>بعد از نصب باید همیشه پنجرهٔ افزونه باز باشد؟</h3><p>نه. تنظیمات ذخیره‌شده به‌صورت خودکار روی سایت‌های انتخابی اعمال می‌شوند. پنجره را فقط برای تغییر تنظیمات باز کن.</p></article>
-        <article class="faq-item" data-reveal><h3>چرا دکمهٔ Load unpacked نمایش داده نمی‌شود؟</h3><p>اول <bdi dir="ltr">Developer mode</bdi> را از بالای صفحهٔ <bdi dir="ltr">chrome://extensions</bdi> روشن کن.</p></article>
-        <article class="faq-item" data-reveal><h3>کجا می‌توانم کد و مجوزها را ببینم؟</h3><p>مخزن GitHub شامل فایل‌های افزونه، تاریخچهٔ تغییرات و اعلان‌های مجوز کتابخانه‌هاست.</p><a class="text-link" href="https://github.com/mcodersir/FontYar-Chrome-Extension" target="_blank" rel="noopener noreferrer">رفتن به مخزن <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a></article>
+        <article class="faq-item" data-reveal><h3>باید پنجرهٔ افزونه همیشه باز بمونه؟</h3><p>نه، خیالت راحت! تنظیم‌هایی که ذخیره کردی خودکار روی سایت‌های انتخابی اجرا می‌شن. فقط وقتی خواستی چیزی رو عوض کنی، پنجرهٔ افزونه رو باز کن.</p></article>
+        <article class="faq-item" data-reveal><h3>چرا Load unpacked رو نمی‌بینم؟</h3><p>اول <bdi dir="ltr">Developer mode</bdi> رو بالای صفحهٔ <bdi dir="ltr">chrome://extensions</bdi> روشن کن؛ دکمه ظاهر می‌شه.</p></article>
+        <article class="faq-item" data-reveal><h3>کد افزونه و مجوزهاش کجاست؟</h3><p>همه‌چیز توی مخزن GitHub هست: فایل‌های افزونه، تغییراتش و مجوز کتابخونه‌هایی که استفاده شده.</p><a class="text-link" href="https://github.com/mcodersir/FontYar-Chrome-Extension" target="_blank" rel="noopener noreferrer">برو به مخزن <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a></article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-row"><a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="36" height="36"><span><strong>پرشین‌یار</strong><small>ابزار وب به زبان فارسی</small></span></a><span>ساخته‌شده برای خواندن راحت‌تر وب.</span><a class="footer-link" href="https://github.com/mcodersir/FontYar-Chrome-Extension" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a></div></footer>
-  <script src="assets/theme.js" defer></script>
-  <script src="assets/motion.js" defer></script>
+  <footer class="site-footer"><div class="container footer-row"><a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="36" height="36"><span><strong>پرشین‌یار</strong><small>وب‌گردی راحت‌تر، به فارسی</small></span></a><span>برای اینکه وب رو راحت‌تر بخونی.</span><a class="footer-link" href="https://github.com/mcodersir/FontYar-Chrome-Extension" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a></div></footer>
+  <script src="assets/theme.js?v=20261001-motion" defer></script>
+  <script src="assets/motion.js?v=20261001-motion" defer></script>
 </body>
 </html>
