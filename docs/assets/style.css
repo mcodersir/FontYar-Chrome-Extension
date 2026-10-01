@@ -16,3 +16,23 @@ html[data-theme="light"] .moon-icon{display:block}html[data-theme="light"] .sun-
 @media(max-width:900px){.container{width:min(100% - 36px,720px)}.main-nav{gap:13px}.main-nav>a:not(.nav-download){display:none}.hero{min-height:auto;padding-block:70px;gap:33px}.hero h1{font-size:48px}.install-layout{grid-template-columns:.8fr 1.2fr;gap:34px}}
 @media(max-width:640px){.container{width:calc(100% - 32px)}.site-header{height:68px}.brand img{width:37px;height:37px}.main-nav{gap:7px}.main-nav>a[href="#install"]{display:inline-flex;font-size:10px;white-space:nowrap}.theme-toggle{width:39px;height:39px;padding:0;font-size:0}.theme-toggle svg{width:17px;height:17px}.nav-download{height:39px;padding:0 10px;font-size:10px}.hero{grid-template-columns:1fr;padding-block:55px 50px;gap:42px}.hero h1{font-size:45px}.hero-lead{font-size:13px}.hero-note{align-items:flex-start;font-size:10px}.preview-wrap{max-width:430px}.feature-section{padding-block:48px 62px}.section-heading{align-items:start;flex-direction:column;gap:5px}.section-heading h2{font-size:23px}.section-heading>p{font-size:11px}.feature-grid,.faq-grid{grid-template-columns:1fr}.feature-card{min-height:0;padding:17px}.feature-icon{margin-bottom:10px}.feature-card p{font-size:11px}.install-section{padding-block:58px}.install-layout{grid-template-columns:1fr;gap:31px}.install-intro{position:static}.install-intro h2{font-size:27px}.install-intro>p{max-width:440px;font-size:12px}.steps li{grid-template-columns:40px 1fr;gap:12px;padding-bottom:22px}.step-number{width:40px;height:40px;border-radius:12px;font-size:10px}.steps::before{right:19px}.steps h3{font-size:12px}.steps p{font-size:10px}.step-download{max-width:100%;font-size:9px}.release-section{padding-block:50px}.release-card{display:grid;grid-template-columns:48px 1fr;gap:10px 13px;padding:15px}.release-copy h2{font-size:15px}.release-copy p{font-size:9px}.release-card .button{grid-column:1/-1;width:100%}.faq-section{padding-block:15px 60px}.faq-item{padding:15px}.footer-row{min-height:85px;flex-wrap:wrap;justify-content:space-between;padding-block:12px}.footer-row>span{order:3;width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* Product screenshots and complete capability list */
+.screens-section{padding-block:42px 76px;border-top:1px solid var(--line)}
+.screens-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.screen-card{overflow:hidden;margin:0;border:1px solid var(--line);border-radius:18px;background:var(--surface);transition:transform .18s,border-color .18s}
+.screen-card:hover{transform:translateY(-2px);border-color:var(--line-strong)}
+.screen-card>a{display:grid;place-items:center;min-height:260px;padding:9px;background:#09090b}
+.screen-card img{display:block;width:100%;height:auto;max-height:650px;object-fit:contain}
+.screen-card figcaption{display:grid;gap:2px;padding:12px 15px 15px}
+.screen-card figcaption strong{font-size:12px}
+.screen-card figcaption span,.screens-hint{color:var(--muted);font-size:10px}
+.screens-hint{margin:13px 0 0;text-align:center}
+.feature-grid-detailed{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.feature-grid-detailed .feature-card{min-height:100%;padding:21px}
+.feature-grid-detailed .feature-card p{margin-bottom:9px}
+.feature-grid-detailed .feature-card ul{display:grid;gap:5px;margin:0;padding:0 17px 0 0;list-style:none;color:var(--muted);font-size:10.5px;line-height:1.8}
+.feature-grid-detailed .feature-card li{position:relative}
+.feature-grid-detailed .feature-card li::before{content:"";position:absolute;top:.85em;right:-14px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+@media(max-width:900px){.feature-grid-detailed{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.screens-section{padding-block:33px 54px}.screens-grid,.feature-grid-detailed{grid-template-columns:1fr}.screen-card>a{min-height:0;padding:7px}.screen-card img{max-height:none}.feature-grid-detailed .feature-card{padding:17px}.feature-grid-detailed .feature-card ul{font-size:10px}}
