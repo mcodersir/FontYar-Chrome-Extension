@@ -1,0 +1,11 @@
+/* PersianYar Smart Dark pre-paint guard v38.
+   Layout-neutral: only the page canvas and native color-scheme are touched before runtime. */
+html[data-persianyar-smart-dark-prepaint="1"],
+html[data-persianyar-smart-dark-prepaint="1"] body{
+  background:var(--persianyar-prepaint-bg,#181a1b)!important;
+  color:var(--persianyar-prepaint-fg,#e8e6e3)!important;
+  color-scheme:dark!important;
+}
+html[data-persianyar-smart-dark-prepaint="1"]{scrollbar-color:color-mix(in srgb,var(--persianyar-prepaint-fg,#e8e6e3) 30%,var(--persianyar-prepaint-bg,#181a1b)) var(--persianyar-prepaint-bg,#181a1b)}
+html[data-persianyar-smart-dark-prepaint="1"] :where(input,textarea,select,button,option,optgroup,[role="textbox"],[role="searchbox"],[role="combobox"],[role="checkbox"],[role="radio"],[role="switch"]){color-scheme:dark!important}
+html[data-persianyar-smart-dark-prepaint="1"] :where(input[type="checkbox"],input[type="radio"],input[type="range"],progress){accent-color:var(--persianyar-prepaint-accent,#8ab4f8)!important}

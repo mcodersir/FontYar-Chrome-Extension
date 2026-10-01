@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>پرشین یار — تنظیمات</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="page-header glass">
+      <div class="brand"><img src="icons/logo.svg" alt=""><div><b>پرشین یار</b><span data-i18n="manageExtension">مدیریت افزونه</span></div></div>
+      <div class="header-controls">
+        <div class="locale-mini" id="localeMini"><button data-locale="fa">FA</button><button data-locale="en">EN</button><button data-locale="ar">AR</button><button data-locale="zh">中文</button></div>
+        <div class="theme-switcher" id="themeSwitcher">
+          <button class="theme-option" data-theme-value="system"><svg class="icon sm"><use href="icons/sprite.svg#monitor"/></svg><span data-i18n="system">سیستم</span></button>
+          <button class="theme-option" data-theme-value="light"><svg class="icon sm"><use href="icons/sprite.svg#sun"/></svg><span data-i18n="light">روشن</span></button>
+          <button class="theme-option" data-theme-value="dark"><svg class="icon sm"><use href="icons/sprite.svg#moon"/></svg><span data-i18n="dark">تیره</span></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-options">
+      <div><span class="eyebrow"><svg class="icon sm"><use href="icons/sprite.svg#sparkles"/></svg>پرشین یار <span id="heroVersion">1</span></span><h1 data-i18n="heroTitle">فونت، ایموجی و بومی سازی هر سایت، دقیقا همان طور که می خواهی.</h1><p data-i18n="heroBody">تنظیمات هر دامنه مستقل ذخیره می شود؛ فونت هر زبان، اندازه متن، اعداد، ایموجی و ابزارهای فارسی سازی جداگانه قابل کنترل هستند.</p></div>
+      <div class="source-card glass"><svg class="icon lg"><use href="icons/sprite.svg#globe"/></svg><div><b>Cache-first</b><span data-i18n="sourceBody">فونت و ایموجی پس از اولین دریافت از کش محلی خوانده می شوند</span></div></div>
+    </section>
+
+    <section class="backup-tools glass">
+      <div class="backup-copy"><svg class="icon lg"><use href="icons/sprite.svg#download"/></svg><div><b data-i18n="backupTitle">پشتیبان گیری از تنظیمات</b><span data-i18n="backupBody">همه تنظیمات سایت ها را در یک فایل JSON ذخیره کن یا نسخه قبلی را با تنظیمات فعلی ادغام کن.</span></div></div>
+      <div class="backup-actions"><button id="exportSettings" class="backup-btn" type="button"><svg class="icon sm"><use href="icons/sprite.svg#download"/></svg><span data-i18n="exportBackup">خروجی پشتیبان</span></button><button id="importSettings" class="backup-btn" type="button"><svg class="icon sm"><use href="icons/sprite.svg#external"/></svg><span data-i18n="importBackup">وارد کردن و ادغام</span></button><input id="importFile" type="file" accept="application/json,.json" hidden></div>
+    </section>
+
+    <section class="manager glass">
+      <div class="manager-head">
+        <div><h2 data-i18n="savedSites">سایت های ذخیره شده</h2><p id="countText">0</p></div>
+        <div class="search-box"><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input id="search" type="search" data-i18n-placeholder="searchSites" placeholder="جستجو در دامنه ها" autocomplete="off"></div>
+      </div>
+      <div id="siteList" class="site-list"></div>
+      <div id="empty" class="empty hidden"><svg class="icon lg"><use href="icons/sprite.svg#globe"/></svg><b data-i18n="emptyTitle">هنوز سایتی ذخیره نشده</b><span data-i18n="emptyBody">از پنجره افزونه روی سایت دلخواه، پرشین یار را فعال کن.</span></div>
+    </section>
+
+    <section class="about glass">
+      <div><svg class="icon"><use href="icons/sprite.svg#shield-check"/></svg><div><b data-i18n="iconProtection">محافظت از آیکون ها</b><span data-i18n="iconProtectionBody">آیکون فونت ها، SVGها، ادیتورهای کد و کنترل های حساس از تغییر فونت مستثنی می شوند.</span></div></div>
+      <div><svg class="icon"><use href="icons/sprite.svg#type"/></svg><div><b data-i18n="multiFonts">فونت چندزبانه</b><span data-i18n="multiFontsBody">برای فارسی، انگلیسی، عربی و چینی می توانی فونت متفاوت انتخاب کنی.</span></div></div>
+      <div><svg class="icon"><use href="icons/sprite.svg#smile"/></svg><div><b data-i18n="emojiPacks">پک های ایموجی</b><span data-i18n="emojiPacksBody">Android، Windows، Apple-compatible، Twemoji، Fluent، OpenMoji، Blobmoji و مدل های بیشتر با کش محلی.</span></div></div>
+      <div><svg class="icon"><use href="icons/sprite.svg#sparkles"/></svg><div><b data-i18n="localization">بومی سازی آزمایشی</b><span data-i18n="localizationBody">دیتابیس آفلاین عبارت های رابط سایت های معروف فقط روی تطبیق دقیق اجرا می شود.</span></div></div>
+    </section>
+
+    <footer>پرشین یار <span id="runtimeVersion">v1</span> · Lucide icons · Manifest V3</footer>
+  </div>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="site-storage.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

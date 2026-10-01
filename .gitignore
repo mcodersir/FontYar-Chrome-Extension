@@ -1,0 +1,7 @@
+content.js.bak
+*.zip
+*.crx
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

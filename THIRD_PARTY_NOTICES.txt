@@ -1,0 +1,46 @@
+PersianYar v1.0.0 - third-party notices
+
+UI icons
+- Lucide Icons: ISC License. https://lucide.dev/
+
+Persian fonts
+- FontAPI / FontServer-compatible sources are used for the Persian font catalog.
+- Individual font licenses remain with their respective authors/projects.
+
+Latin, Arabic and Chinese fonts
+- Google Fonts / Noto families and other open font families are loaded through their published web-font endpoints.
+- System choices such as Segoe UI, Arial, Tahoma, Microsoft YaHei, DengXian and PingFang SC are referenced with local() and are not redistributed.
+
+Emoji sources
+- Twemoji / Jdecked Twemoji: Twemoji artwork CC-BY-4.0; see upstream project terms.
+- Fluent Emoji: Microsoft Fluent Emoji artwork and webfont packaging under their published MIT/open-source terms.
+- OpenMoji: artwork CC BY-SA 4.0.
+- Noto Color Emoji / Noto Emoji: Google Noto Emoji; OFL/Apache terms as published upstream.
+- Blobmoji: Noto-derived open emoji font under upstream open licenses.
+- EmojiTwo: open-source EmojiOne 2.x-derived artwork, CC-BY-4.0.
+- Toss Face: used via the open/free upstream packaging terms published by the Toss Face project / emojifonts build project.
+- iebb/emojifonts provides generated browser-compatible font builds for several open emoji sets; individual artwork licenses remain those of their upstream projects.
+
+System-local modes
+- Segoe UI Emoji is a Microsoft system font. PersianYar references it when installed and does not redistribute it.
+- Apple Color Emoji is an Apple system font. PersianYar references it when installed and does not redistribute it. On non-Apple systems PersianYar uses an open compatible fallback instead of pretending the Apple font is installed.
+
+See each upstream project for full and current license texts.
+
+Cursor sources
+- Apple Cursor by ful1e5: GPL-3.0; SVG cursor sources are fetched from the upstream GitHub project through jsDelivr, with raw.githubusercontent.com as a verified mirror fallback.
+- BreezeX Cursor by ful1e5: GPL-3.0; SVG cursor sources are fetched from the upstream GitHub project through jsDelivr, with raw.githubusercontent.com as a verified mirror fallback.
+- Bibata Cursor by ful1e5: upstream open-source cursor assets; SVG sources are fetched from GitHub through jsDelivr (with a GitHub raw mirror fallback) and recolored at runtime for the built-in Bibata/Material presets.
+- XCursor Pro by ful1e5: upstream open-source cursor assets fetched from GitHub through jsDelivr, with raw.githubusercontent.com as a verified mirror fallback.
+- Google Cursor / GoogleDot by ful1e5: upstream open-source cursor assets fetched from GitHub through jsDelivr, with raw.githubusercontent.com as a verified mirror fallback.
+- Material Bibata preset colors are based on the public Material Bibata theme catalog; PersianYar does not bundle precompiled cursor archives.
+- jsDelivr is the primary CDN transport for upstream SVG files; raw.githubusercontent.com is used only as a mirror fallback. Cached copies stay in the browser profile after first use.
+
+--- Dark Reader Dynamic Theme color core (adapted) ---
+Project: Dark Reader
+Source: https://github.com/darkreader/darkreader
+Reference implementation: Dark Reader 4.9.130 Dynamic Theme color transformation logic
+License: MIT
+Copyright (c) 2026 Dark Reader Ltd.
+PersianYar vendors an adapted color/gradient transformation core only. Dark Reader logos,
+mascot, icons and design assets are not included. See licenses/DARK_READER_LICENSE.txt.

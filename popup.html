@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>پرشین یار</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="is-loading">
+  <div id="appSkeleton" class="app-skeleton" aria-hidden="true">
+    <div class="sk-top"><i class="sk-circle"></i><span class="sk-lines"><i></i><i></i></span><i class="sk-square"></i></div>
+    <div class="sk-card sk-hero"><i></i><i></i><i></i></div>
+    <div class="sk-card sk-tall"><i></i><i></i><i></i><i></i></div>
+    <div class="sk-card sk-row"><i></i><i></i></div>
+    <div class="sk-card sk-row"><i></i><i></i></div>
+  </div>
+  <main class="shell" id="shell">
+    <div class="ambient a1"></div><div class="ambient a2"></div>
+    <header class="topbar">
+      <div class="brand">
+        <img src="icons/logo.svg" class="brand-logo" alt="">
+        <div><strong>پرشین یار</strong><span><span class="brand-tagline">یه ابزار برای کمک به پارسی زبانان</span><span class="brand-dot"> · </span><span id="siteLabel">...</span><span id="pauseBadge" class="pause-badge hidden" data-i18n="pausedBadge">مکث</span></span></div>
+      </div>
+      <button id="menuButton" class="icon-button" type="button" aria-label="Menu" aria-expanded="false"><svg class="icon"><use href="icons/sprite.svg#menu"/></svg></button>
+    </header>
+
+    <section id="unsupported" class="unsupported-state hidden" aria-live="polite">
+      <div class="unsupported-state-inner">
+        <span class="unsupported-state-icon" aria-hidden="true"><svg class="icon"><use href="icons/sprite.svg#info"/></svg></span>
+        <div class="unsupported-state-copy"><b data-i18n="unsupportedTitle">این صفحه قابل تغییر نیست</b><p data-i18n="unsupportedBody">صفحات داخلی Chrome اجازه تزریق استایل نمی دهند.</p></div>
+      </div>
+    </section>
+
+    <nav id="featureTabs" class="feature-tabs glass" aria-label="بخش های افزونه">
+      <span id="tabIndicator" class="tab-indicator" aria-hidden="true"></span>
+      <button class="feature-tab active" type="button" data-tab="text" aria-selected="true"><svg class="icon sm"><use href="icons/sprite.svg#type"/></svg><span>متن</span></button>
+      <button class="feature-tab" type="button" data-tab="localize" aria-selected="false"><svg class="icon sm"><use href="icons/sprite.svg#globe"/></svg><span>بومی سازی</span></button>
+      <button class="feature-tab" type="button" data-tab="visual" aria-selected="false"><svg class="icon sm"><use href="icons/sprite.svg#sparkles"/></svg><span>ظاهر و موس</span></button>
+      <button class="feature-tab" type="button" data-tab="motion" aria-selected="false"><svg class="icon sm"><use href="icons/sprite.svg#sliders"/></svg><span>حرکت</span></button>
+    </nav>
+
+    <div id="controls" class="stack">
+      <section class="hero glass motion-card" data-tab-panel="text">
+        <div class="hero-row">
+          <div class="hero-icon"><svg class="icon lg"><use href="icons/sprite.svg#type"/></svg></div>
+          <div class="hero-copy"><b data-i18n="siteTypography">تایپوگرافی این سایت</b><span id="enabledText">خاموش</span></div>
+          <button id="enabled" class="switch" role="switch" aria-checked="false" aria-label="Enable site typography"></button>
+        </div>
+        <div class="hero-preview" id="fontPreview"><span>پرشین یار</span><small>Typography · 文字 · العربية</small></div>
+      </section>
+
+      <section class="settings-card glass motion-card" data-tab-panel="text">
+        <button class="section-title accordion-toggle" type="button" data-accordion="languageFonts" aria-expanded="true">
+          <span><svg class="icon sm"><use href="icons/sprite.svg#globe"/></svg><b data-i18n="fontsByLanguage">فونت هر زبان</b><small id="fontCountLabel">۴۲ فونت</small></span>
+          <svg class="icon sm accordion-chevron"><use href="icons/sprite.svg#chevron-down"/></svg>
+        </button>
+        <div class="accordion-panel open" id="languageFonts">
+          <div class="accordion-inner">
+            <div class="unified-font-box">
+              <div class="unified-font-head"><div><b data-i18n="singleFontTitle">یک فونت برای همه زبان ها</b><small data-i18n="singleFontHint">همان فونت را روی همه زبان ها اعمال می کند.</small></div><button id="unifiedFontEnabled" class="switch small" role="switch" aria-checked="false" aria-label="One font for all languages"></button></div>
+              <div id="unifiedFontPicker" class="unified-font-picker hidden">
+                <div class="language-sample"><span class="lang-chip">ALL</span><div><b data-i18n="singleFontPick">فونت مشترک</b><small class="font-sample preview-loading" id="sample-all">Aa · فارسی · العربية · 中文 · 123</small></div></div>
+                <div class="custom-select compact font-language-select" id="font-all"><button class="select-trigger" type="button" aria-haspopup="listbox"><span data-select-label>وزیرمتن</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu font-menu" role="listbox"><div class="search-row" data-select-static><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input type="search" data-font-search placeholder="جستجو / Search..."></div><div class="select-options"></div></div></div>
+              </div>
+            </div>
+            <div class="language-fonts" id="languageFontRows">
+            <div class="language-font-row" data-script="fa">
+              <div class="language-sample"><span class="lang-chip">FA</span><div><b>فارسی</b><small class="font-sample preview-loading" id="sample-fa">این یک نمونه متن فارسی است</small></div></div>
+              <div class="custom-select compact font-language-select" id="font-fa" data-script="fa"><button class="select-trigger" type="button" aria-haspopup="listbox"><span data-select-label>وزیرمتن</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu font-menu" role="listbox"><div class="search-row" data-select-static><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input type="search" data-font-search placeholder="جستجو..."></div><div class="select-options"></div></div></div>
+            </div>
+            <div class="language-font-row" data-script="en">
+              <div class="language-sample"><span class="lang-chip">EN</span><div><b>English</b><small class="font-sample preview-loading" id="sample-en">The quick brown fox jumps</small></div></div>
+              <div class="custom-select compact font-language-select" id="font-en" data-script="en"><button class="select-trigger" type="button" aria-haspopup="listbox"><span data-select-label>Inter</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu font-menu" role="listbox"><div class="search-row" data-select-static><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input type="search" data-font-search placeholder="Search..."></div><div class="select-options"></div></div></div>
+            </div>
+            <div class="language-font-row" data-script="ar">
+              <div class="language-sample"><span class="lang-chip">AR</span><div><b>العربية</b><small class="font-sample preview-loading" id="sample-ar">هذا مثال للنص العربي</small></div></div>
+              <div class="custom-select compact font-language-select" id="font-ar" data-script="ar"><button class="select-trigger" type="button" aria-haspopup="listbox"><span data-select-label>Noto Sans Arabic</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu font-menu" role="listbox"><div class="search-row" data-select-static><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input type="search" data-font-search placeholder="بحث..."></div><div class="select-options"></div></div></div>
+            </div>
+            <div class="language-font-row" data-script="zh">
+              <div class="language-sample"><span class="lang-chip">ZH</span><div><b>简体中文</b><small class="font-sample preview-loading" id="sample-zh">这是一个中文字体示例</small></div></div>
+              <div class="custom-select compact font-language-select" id="font-zh" data-script="zh"><button class="select-trigger" type="button" aria-haspopup="listbox"><span data-select-label>Noto Sans SC</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu font-menu" role="listbox"><div class="search-row" data-select-static><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input type="search" data-font-search placeholder="搜索..."></div><div class="select-options"></div></div></div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="control-row size-control">
+          <div><b data-i18n="fontSizeOffset">افزایش اندازه فونت</b><span data-i18n="fontSizeHint">به اندازه فعلی هر متن اضافه می شود</span></div>
+          <div class="stepper"><button id="fontDeltaMinus" type="button" aria-label="minus">−</button><output id="fontDeltaValue">+0</output><button id="fontDeltaPlus" type="button" aria-label="plus">+</button></div>
+        </div>
+
+        <div class="split fields-grid">
+          <div class="field">
+            <div class="field-head"><span data-i18n="alignment">تراز</span></div>
+            <div class="custom-select" id="align" data-value="preserve"><button class="select-trigger" type="button"><span data-select-label data-i18n="preserve">حفظ سایت</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu" role="listbox"></div></div>
+          </div>
+          <div class="field">
+            <div class="field-head"><span data-i18n="weight">وزن</span></div>
+            <div class="custom-select" id="weightMode" data-value="preserve"><button class="select-trigger" type="button"><span data-select-label data-i18n="preserve">حفظ سایت</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu" role="listbox"></div></div>
+          </div>
+        </div>
+        <div id="weightBox" class="split fields-grid hidden">
+          <div class="field"><div class="field-head"><span data-i18n="normalText">متن معمولی</span></div><div class="custom-select weight-select" id="normalWeight"><button class="select-trigger" type="button"><span data-select-label>400</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu"></div></div></div>
+          <div class="field"><div class="field-head"><span data-i18n="boldText">متن بولد</span></div><div class="custom-select weight-select" id="boldWeight"><button class="select-trigger" type="button"><span data-select-label>700</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu"></div></div></div>
+        </div>
+
+        <div class="field">
+          <div class="field-head"><span data-i18n="digits">نمایش اعداد</span><small data-i18n="digitsHint">بدون تغییر، فارسی، لاتین یا عربی</small></div>
+          <div class="custom-select" id="digitMode"><button class="select-trigger" type="button"><span data-select-label data-i18n="preserve">بدون تغییر</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu"></div></div>
+        </div>
+        <div class="control-row digit-size-row">
+          <div><b data-i18n="digitFontOffset">افزایش اندازه اعداد</b><span data-i18n="digitFontOffsetHint">فقط به اندازه فعلی عددها اضافه می شود</span></div>
+          <div class="stepper"><button id="digitFontDeltaMinus" type="button" aria-label="minus">−</button><output id="digitFontDeltaValue">+0</output><button id="digitFontDeltaPlus" type="button" aria-label="plus">+</button></div>
+        </div>
+      </section>
+
+      <section class="settings-card glass motion-card emoji-section" data-tab-panel="text">
+        <div class="section-title static-title">
+          <span><svg class="icon sm"><use href="icons/sprite.svg#smile"/></svg><b data-i18n="emojiStyle">استایل ایموجی</b><small id="emojiCacheSummary">...</small></span>
+          <button id="emojiEnabled" class="switch small" role="switch" aria-checked="false"></button>
+        </div>
+        <div class="custom-select emoji-select" id="emojiStyle" data-value="twemoji">
+          <button class="select-trigger emoji-trigger" type="button" aria-haspopup="listbox"><span class="emoji-trigger-main"><span id="emojiTriggerPreview" class="emoji-preview preview-loading" dir="ltr">😂 🥳 ❤️ 🚀</span><span class="emoji-trigger-copy"><b data-select-label>Twemoji</b><small id="emojiTriggerState">...</small></span></span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button>
+          <div class="select-menu emoji-menu" role="listbox"><div class="search-row" data-select-static><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input id="emojiSearch" type="search" placeholder="جستجوی استایل..."><kbd id="emojiResultCount">0</kbd></div><div id="emojiOptions" class="select-options emoji-options"></div></div>
+        </div>
+        <div class="micro-note"><svg class="icon sm"><use href="icons/sprite.svg#download"/></svg><span data-i18n="emojiDownloadHint">پک انتخابی دانلود و در کش افزونه نگه داشته می شود.</span></div>
+      </section>
+
+      <section class="settings-card glass motion-card beta-card" data-tab-panel="localize">
+        <div class="section-title static-title">
+          <span><svg class="icon sm"><use href="icons/sprite.svg#sparkles"/></svg><b data-i18n="localizeTitle">بومی سازی فارسی سایت</b><small><span class="beta-pill">BETA</span> <span id="localizationCount">1428</span></small></span>
+          <span class="localize-actions">
+            <button id="localizationGuideButton" class="mini-help-button" type="button" aria-label="راهنمای سایت های پشتیبانی شده" title="راهنمای سایت های پشتیبانی شده"><svg class="icon sm"><use href="icons/sprite.svg#info"/></svg></button>
+            <button id="localizeEnabled" class="switch small" role="switch" aria-checked="false"></button>
+          </span>
+        </div>
+        <p data-i18n="localizeBody">عبارت های رابط انگلیسی شناخته شده را فقط وقتی تطبیق دقیق داشته باشند به فارسی تبدیل می کند؛ متن پست ها دست نمی خورد.</p>
+      </section>
+
+
+      <section class="settings-card glass motion-card beta-card soft-motion-card" data-tab-panel="motion">
+        <div class="section-title static-title">
+          <span><svg class="icon sm"><use href="icons/sprite.svg#sparkles"/></svg><b data-i18n="softMotionTitle">انیمیشن نرم</b><small><span class="beta-pill">BETA</span></small></span>
+          <span class="localize-actions"><button id="motionGuideButton" class="mini-help-button" type="button" aria-label="راهنمای انیمیشن" title="راهنمای انیمیشن"><svg class="icon sm"><use href="icons/sprite.svg#info"/></svg></button><button id="softMotionEnabled" class="switch small" role="switch" aria-checked="false"></button></span>
+        </div>
+        <p data-i18n="softMotionBody">حرکت های رابط سایت را ملایم تر می کند و به تنظیم Reduce Motion سیستم احترام می گذارد.</p>
+        <button id="motionCustomizeToggle" class="subsection-toggle" type="button" aria-expanded="false"><span><svg class="icon sm"><use href="icons/sprite.svg#sliders"/></svg><b data-i18n="motionCustomize">شخصی سازی انیمیشن ها</b></span><svg class="icon sm subsection-chevron"><use href="icons/sprite.svg#chevron-down"/></svg></button>
+        <div id="motionCustomizePanel" class="motion-custom-panel">
+          <div class="motion-custom-grid">
+            <div class="motion-mini-row"><span><b data-i18n="motionHover">Hover و Focus</b><small data-i18n="motionHoverHint">تغییر رنگ و شفافیت کنترل ها</small></span><button id="motionHoverEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b data-i18n="motionPop">باز شدن منوها</b><small data-i18n="motionPopHint">Origin-aware pop سبک</small></span><button id="motionPopEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Stagger</b><small data-i18n="motionStaggerHint">ورود مرحله ای آیتم ها</small></span><button id="motionStaggerEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Cross-fade</b><small data-i18n="motionCrossfadeHint">تغییر نرم متن و state</small></span><button id="motionCrossfadeEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Morph</b><small data-i18n="motionMorphHint">بازخورد تغییر وضعیت کنترل</small></span><button id="motionMorphEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Shared layout</b><small data-i18n="motionSharedHint">جابجایی کوتاه آیتم های منو</small></span><button id="motionSharedLayoutEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Rubber band</b><small data-i18n="motionRubberHint">بازخورد فشردن دکمه</small></span><button id="motionRubberEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Safe polygon</b><small data-i18n="motionSafeHint">منوی hover هنگام حرکت موس بسته نمی شود</small></span><button id="motionSafePolygonEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b data-i18n="motionList">ورود نرم لیست ها</b><small data-i18n="motionListHint">آیتم های تازه فقط Fade می شوند</small></span><button id="motionListEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b data-i18n="motionShimmer">Shimmer بارگذاری</b><small data-i18n="motionShimmerHint">فقط Placeholderهای واقعی سایت</small></span><button id="motionShimmerEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Tooltip intent delay</b><small>اولین تولتیپ با مکث؛ بعدی ها فوری</small></span><button id="motionTooltipDelayEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Tabular nums</b><small>ثبات عرض تایمر، قیمت و شمارنده</small></span><button id="motionTabularNumsEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Scroll fade</b><small>نشانه ظریف برای ادامه لیست</small></span><button id="motionScrollFadeEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Slider morph</b><small>بازخورد نرم تغییر اسلایدر</small></span><button id="motionSliderMorphEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Shared element</b><small>پیوستگی تصویر از آیتم به جزئیات</small></span><button id="motionSharedElementEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+            <div class="motion-mini-row"><span><b>Icon cross-fade</b><small>تعویض نرم آیکون دکمه ها</small></span><button id="motionIconCrossfadeEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+          </div>
+        </div>
+        <div class="option-row soft-corner-row"><div><b data-i18n="softCorners">گرد کردن هوشمند گوشه ها</b><span data-i18n="softCornersHint">فقط کنترل های تقریبا تیز را نرم می کند؛ آواتار و دکمه های گرد دست نخورده می مانند.</span></div><button id="softCorners" class="switch small" role="switch" aria-checked="false"></button></div>
+        <div class="option-row soft-corner-row"><div><b data-i18n="uniformCorners">یکسان سازی گوشه های گرد</b><span data-i18n="uniformCornersHint">گوشه هایی که از قبل گرد هستند را به یک شعاع یکسان تبدیل می کند.</span></div><button id="uniformCornersEnabled" class="switch small" role="switch" aria-checked="false"></button></div>
+        <div id="uniformCornerRadiusRow" class="control-row soft-corner-row hidden"><div><b data-i18n="cornerRadius">شعاع گوشه</b><span data-i18n="cornerRadiusHint">۰ تا ۳۶ پیکسل</span></div><div class="stepper"><button id="cornerRadiusMinus" type="button" aria-label="minus">−</button><output id="cornerRadiusValue">14px</output><button id="cornerRadiusPlus" type="button" aria-label="plus">+</button></div></div>
+        <div class="option-row soft-corner-row"><div><b data-i18n="removeShadows">حذف سایه های سایت</b><span data-i18n="removeShadowsHint">Box shadow و text shadow را حذف می کند.</span></div><button id="removeShadows" class="switch small" role="switch" aria-checked="false"></button></div>
+        <div class="option-row soft-corner-row"><div><b data-i18n="smoothScroll">اسکرول نرم</b><span data-i18n="smoothScrollHint">اسکرول ماوس و جابه جایی های برنامه ای را نرم تر می کند.</span></div><button id="smoothScrollEnabled" class="switch small" role="switch" aria-checked="false"></button></div>
+      </section>
+
+      <section class="settings-card glass motion-card style-card" data-tab-panel="visual">
+        <div class="section-title static-title"><span><svg class="icon sm"><use href="icons/sprite.svg#sparkles"/></svg><b data-i18n="styleTitle">استایل سایت</b><small><span class="beta-pill">BETA</span></small></span></div>
+        <p data-i18n="styleBody">بهبودهای ظاهری اختیاری؛ بدون دستکاری ابعاد و ساختار اصلی</p>
+        <div class="style-grid">
+          <div class="option-row"><div><b data-i18n="smartDark">دارک هوشمند</b><span data-i18n="smartDarkHint">سطوح روشن خنثی را تیره می کند</span></div><button id="smartDarkMode" class="switch small" role="switch" aria-checked="false"></button></div>
+          <button id="smartDarkCustomizeToggle" class="subsection-toggle smart-dark-tune-toggle" type="button" aria-expanded="false" aria-controls="smartDarkCustomizePanel">
+            <span><svg class="icon sm"><use href="icons/sprite.svg#sliders"/></svg><b data-i18n="smartDarkCustomize">پالت و شدت تم دارک</b><small id="smartDarkPresetLabel">متعادل</small></span>
+            <svg class="icon sm subsection-chevron"><use href="icons/sprite.svg#chevron-down"/></svg>
+          </button>
+          <div id="smartDarkCustomizePanel" class="smart-dark-custom-panel">
+            <div class="smart-dark-custom-inner">
+              <div class="smart-dark-preset-head"><b data-i18n="smartDarkPresets">سبک های آماده</b><span data-i18n="smartDarkPresetsHint">یک سبک را انتخاب کن؛ بعد هم می توانی ریز تنظیمش کنی.</span></div>
+              <div id="smartDarkPresetGrid" class="smart-dark-preset-grid" role="listbox" aria-label="Dark theme presets"></div>
+              <div class="smart-dark-custom-head"><b data-i18n="smartDarkCustomColors">رنگ های سفارشی</b><span data-i18n="smartDarkCustomColorsHint">پس زمینه، متن، تاکید و حاشیه خطی</span></div>
+              <div class="smart-dark-color-grid">
+                <label class="smart-dark-color-row"><span data-i18n="smartDarkBackground">پس زمینه</span><span class="smart-dark-color-control"><input id="smartDarkBackgroundColor" type="color" value="#181a1b" aria-label="Dark background color"><output id="smartDarkBackgroundValue">#181A1B</output></span></label>
+                <label class="smart-dark-color-row"><span data-i18n="smartDarkText">متن</span><span class="smart-dark-color-control"><input id="smartDarkTextColor" type="color" value="#e8e6e3" aria-label="Dark text color"><output id="smartDarkTextValue">#E8E6E3</output></span></label>
+                <label class="smart-dark-color-row"><span data-i18n="smartDarkAccent">تاکید</span><span class="smart-dark-color-control"><input id="smartDarkAccentColor" type="color" value="#8ab4f8" aria-label="Dark accent color"><output id="smartDarkAccentValue">#8AB4F8</output></span></label>
+                <label class="smart-dark-color-row"><span data-i18n="smartDarkLinearBorder">حاشیه خطی</span><span class="smart-dark-color-control"><input id="smartDarkLinearColor" type="color" value="#94a3b8" aria-label="Linear border color"><output id="smartDarkLinearValue">#94A3B8</output></span></label>
+              </div>
+              <div class="smart-dark-range-grid">
+                <label class="smart-dark-range-row"><span><b data-i18n="smartDarkBrightness">روشنایی</b><output id="smartDarkBrightnessValue">100%</output></span><input id="smartDarkBrightness" type="range" min="70" max="130" step="1" value="100"></label>
+                <label class="smart-dark-range-row"><span><b data-i18n="smartDarkContrast">کنتراست</b><output id="smartDarkContrastValue">100%</output></span><input id="smartDarkContrast" type="range" min="70" max="140" step="1" value="100"></label>
+                <label class="smart-dark-range-row"><span><b data-i18n="smartDarkSepia">گرمی</b><output id="smartDarkSepiaValue">0%</output></span><input id="smartDarkSepia" type="range" min="0" max="40" step="1" value="0"></label>
+                <label class="smart-dark-range-row"><span><b data-i18n="smartDarkGrayscale">خنثی سازی رنگ</b><output id="smartDarkGrayscaleValue">0%</output></span><input id="smartDarkGrayscale" type="range" min="0" max="100" step="1" value="0"></label>
+              </div>
+              <button id="smartDarkResetTheme" class="smart-dark-reset" type="button"><svg class="icon sm"><use href="icons/sprite.svg#rotate-ccw"/></svg><span data-i18n="smartDarkReset">بازگشت به پالت متعادل</span></button>
+            </div>
+          </div>
+          <div class="option-row"><div><b data-i18n="liquidGlass">شیشه مایع</b><span data-i18n="liquidGlassHint">منوها و پنل های شناور شیشه ای</span></div><button id="liquidGlassMode" class="switch small" role="switch" aria-checked="false"></button></div>
+          <div class="option-row"><div><b data-i18n="linearStyle">استایل خطی</b><span data-i18n="linearStyleHint">مرزهای ظریف به جای عمق اضافی</span></div><button id="linearStyleMode" class="switch small" role="switch" aria-checked="false"></button></div>
+          <div class="option-row"><div><b data-i18n="adaptiveMenus">منوهای کشویی بهتر</b><span data-i18n="adaptiveMenusHint">هماهنگ با رنگ بندی سایت</span></div><button id="adaptiveMenusMode" class="switch small" role="switch" aria-checked="false"></button></div>
+          <div class="option-row"><div><b data-i18n="focusEnhance">Focus واضح</b><span data-i18n="focusEnhanceHint">حلقه فوکوس قابل دسترس</span></div><button id="focusEnhanceMode" class="switch small" role="switch" aria-checked="false"></button></div>
+          <div class="option-row"><div><b data-i18n="polishedInputs">فیلدهای ورودی تمیز</b><span data-i18n="polishedInputsHint">بدون تغییر اندازه ورودی ها</span></div><button id="polishedInputsMode" class="switch small" role="switch" aria-checked="false"></button></div>
+          <button id="siteStyleCustomizeToggle" class="subsection-toggle site-style-tune-toggle" type="button" aria-expanded="false" aria-controls="siteStyleCustomizePanel">
+            <span><svg class="icon sm"><use href="icons/sprite.svg#sliders"/></svg><b data-i18n="styleAdvanced">تنظیمات جزئی استایل</b><small data-i18n="styleAdvancedHint">شیشه، خط، منو، فوکوس و فیلدها</small></span>
+            <svg class="icon sm subsection-chevron"><use href="icons/sprite.svg#chevron-down"/></svg>
+          </button>
+          <div id="siteStyleCustomizePanel" class="smart-dark-custom-panel site-style-custom-panel">
+            <div class="smart-dark-custom-inner site-style-custom-inner">
+              <div class="style-tune-group">
+                <div class="smart-dark-custom-head"><b data-i18n="glassTune">شیشه مایع واقعی</b><span data-i18n="glassTuneHint">فقط روی هدر، سایدبار، منو و پنل های رابط اعمال می شود</span></div>
+                <div class="style-tune-grid">
+                  <label class="smart-dark-color-row"><span data-i18n="glassTint">ته رنگ شیشه</span><span class="smart-dark-color-control"><input id="liquidGlassTintColor" type="color" value="#8ab4f8"><output id="liquidGlassTintValue">#8AB4F8</output></span></label>
+                  <label class="smart-dark-range-row"><span><b data-i18n="glassBlur">محو شدگی</b><output id="liquidGlassBlurValue">18px</output></span><input id="liquidGlassBlur" type="range" min="0" max="32" step="1" value="18"></label>
+                  <label class="smart-dark-range-row"><span><b data-i18n="glassOpacity">غلظت شیشه</b><output id="liquidGlassOpacityValue">58%</output></span><input id="liquidGlassOpacity" type="range" min="20" max="92" step="1" value="58"></label>
+                  <label class="smart-dark-range-row"><span><b data-i18n="glassSaturation">اشباع پشت شیشه</b><output id="liquidGlassSaturationValue">138%</output></span><input id="liquidGlassSaturation" type="range" min="100" max="180" step="1" value="138"></label>
+                  <label class="smart-dark-range-row"><span><b data-i18n="glassTintStrength">قدرت ته رنگ</b><output id="liquidGlassTintStrengthValue">8%</output></span><input id="liquidGlassTintStrength" type="range" min="0" max="35" step="1" value="8"></label>
+                </div>
+              </div>
+              <div class="style-tune-group">
+                <div class="smart-dark-custom-head"><b data-i18n="linearTune">استایل خطی</b><span data-i18n="linearTuneHint">رنگ، ضخامت و شدت خطوط بدون تغییر ابعاد</span></div>
+                <div class="style-tune-grid compact-three">
+                  <label class="smart-dark-color-row"><span data-i18n="linearColor">رنگ خط</span><span class="smart-dark-color-control"><input id="linearStyleColor" type="color" value="#94a3b8"><output id="linearStyleColorValue">#94A3B8</output></span></label>
+                  <label class="smart-dark-range-row"><span><b data-i18n="linearOpacity">شدت خط</b><output id="linearStyleOpacityValue">24%</output></span><input id="linearStyleOpacity" type="range" min="8" max="100" step="1" value="24"></label>
+                  <label class="smart-dark-range-row"><span><b data-i18n="linearWidth">ضخامت خط</b><output id="linearStyleWidthValue">1px</output></span><input id="linearStyleWidth" type="range" min="1" max="3" step="1" value="1"></label>
+                </div>
+              </div>
+              <div class="style-tune-group">
+                <div class="smart-dark-custom-head"><b data-i18n="interactionTune">تعامل ها</b><span data-i18n="interactionTuneHint">هایلایت منو و حلقه فوکوس</span></div>
+                <div class="style-tune-grid compact-three">
+                  <label class="smart-dark-range-row"><span><b data-i18n="menuHighlight">هایلایت منو</b><output id="menuHighlightStrengthValue">12%</output></span><input id="menuHighlightStrength" type="range" min="6" max="32" step="1" value="12"></label>
+                  <label class="smart-dark-color-row"><span data-i18n="focusColor">رنگ Focus</span><span class="smart-dark-color-control"><input id="focusRingColor" type="color" value="#5b9cff"><output id="focusRingColorValue">#5B9CFF</output></span></label>
+                  <label class="smart-dark-range-row"><span><b data-i18n="focusWidth">ضخامت Focus</b><output id="focusRingWidthValue">2px</output></span><input id="focusRingWidth" type="range" min="1" max="4" step="1" value="2"></label>
+                </div>
+              </div>
+              <div class="style-tune-group">
+                <div class="smart-dark-custom-head"><b data-i18n="inputTune">فیلدهای ورودی</b><span data-i18n="inputTuneHint">شدت مرز و Focus فیلد بدون تغییر اندازه</span></div>
+                <div class="style-tune-grid one">
+                  <label class="smart-dark-range-row"><span><b data-i18n="inputHighlight">شدت فیلد</b><output id="inputHighlightStrengthValue">16%</output></span><input id="inputHighlightStrength" type="range" min="6" max="36" step="1" value="16"></label>
+                </div>
+              </div>
+              <button id="siteStyleReset" class="smart-dark-reset" type="button"><svg class="icon sm"><use href="icons/sprite.svg#rotate-ccw"/></svg><span data-i18n="styleTuneReset">بازنشانی تنظیمات ظاهری</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-card glass motion-card cursor-card" data-tab-panel="visual">
+        <div class="section-title static-title">
+          <span><svg class="icon sm"><use href="icons/sprite.svg#sparkles"/></svg><b>موس سفارشی این سایت</b><small id="cursorCacheSummary">پک مشهور · CDN + کش</small></span>
+          <button id="cursorEnabled" class="switch small" role="switch" aria-checked="false" aria-label="Custom cursor"></button>
+        </div>
+        <p class="cursor-copy">۴۲ قالب مینیمال از Apple Cursor، BreezeX، Bibata، XCursor Pro، GoogleDot و Material Bibata. فقط پیش نمایش های قابل مشاهده دریافت می شوند و پک کامل بعد از انتخاب داخل کش افزونه می ماند.</p>
+        <button id="openCursorSheet" class="cursor-picker-trigger" type="button" aria-haspopup="dialog" aria-controls="cursorSheet">
+          <span class="cursor-selected-icon"><img id="cursorSelectedIcon" alt=""></span>
+          <span class="cursor-selected-copy"><b id="cursorSelectedName">macOS مشکی</b><small id="cursorSelectedMeta">Apple Cursor · آماده انتخاب</small></span>
+          <span class="cursor-count-pill">۴۲ قالب</span>
+          <svg class="icon sm"><use href="icons/sprite.svg#chevron-down"/></svg>
+        </button>
+        <div class="cursor-tuning" aria-label="Cursor customization">
+          <div class="cursor-tune-row">
+            <span><b>اندازه موس</b><small>از ۱۶ تا ۹۶ پیکسل؛ Hotspot هم خودکار مقیاس می شود.</small></span>
+            <div class="cursor-stepper"><button id="cursorSizeMinus" type="button" aria-label="Smaller cursor">−</button><strong id="cursorSizeValue">32px</strong><button id="cursorSizePlus" type="button" aria-label="Larger cursor">+</button></div>
+          </div>
+          <div class="cursor-tune-row">
+            <span><b>حرکت زنده موس</b><small>موس با requestAnimationFrame نرم دنبال اشاره گر حرکت می کند.</small></span>
+            <button id="cursorMotionEnabled" class="switch small" role="switch" aria-checked="false" aria-label="Cursor motion"></button>
+          </div>
+          <div id="cursorMotionPanel" class="cursor-motion-panel">
+            <div class="cursor-motion-inner">
+              <div class="cursor-motion-presets" role="radiogroup" aria-label="Cursor motion preset">
+                <button type="button" data-cursor-motion-preset="precise">دقیق</button>
+                <button type="button" data-cursor-motion-preset="smooth">نرم</button>
+                <button type="button" data-cursor-motion-preset="float">شناور</button>
+              </div>
+              <label class="cursor-range-row"><span><b>نرمی حرکت</b><small id="cursorSmoothnessValue">35%</small></span><input id="cursorSmoothness" type="range" min="0" max="100" step="5" value="35"></label>
+              <label class="cursor-range-row"><span><b>طول رد موس</b><small id="cursorTrailLengthValue">3</small></span><input id="cursorTrailLength" type="range" min="1" max="6" step="1" value="3"></label>
+              <div class="cursor-effect-grid">
+                <div class="cursor-effect-row"><span><b>رد حرکتی</b><small>Trail سبک و محو</small></span><button id="cursorTrailEnabled" class="switch tiny" role="switch" aria-checked="false"></button></div>
+                <div class="cursor-effect-row"><span><b>بازخورد کلیک</b><small>Pulse کوتاه</small></span><button id="cursorClickEffectEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+                <div class="cursor-effect-row"><span><b>بزرگ شدن روی لینک</b><small>Scale از Hotspot</small></span><button id="cursorHoverScaleEnabled" class="switch tiny" role="switch" aria-checked="true"></button></div>
+                <div class="cursor-effect-row"><span><b>Glow ظریف</b><small>سایه GPU-friendly</small></span><button id="cursorGlowEnabled" class="switch tiny" role="switch" aria-checked="false"></button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cursorPreviewStage" class="cursor-preview-stage" aria-label="Cursor preview">
+          <img id="cursorLivePreview" class="cursor-live-preview" alt="" aria-hidden="true">
+          <span class="cursor-preview-icon-wrap"><img id="cursorPreviewIcon" class="cursor-preview-icon" alt=""></span>
+          <div><b>پیش نمایش واقعی</b><small>اندازه، Hotspot، لینک، متن، جابه جایی، Resize و حالت حرکتی همین جا شبیه سازی می شوند.</small></div>
+          <button id="cursorPreviewButton" type="button">تست لینک</button>
+          <div class="cursor-state-demo" aria-label="Cursor state coverage">
+            <span data-cursor-demo="text">Text</span><span data-cursor-demo="move">Move</span><span data-cursor-demo="ewResize">Resize</span><span data-cursor-demo="wait">Wait</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-card glass motion-card advanced-card" data-tab-panel="localize">
+        <button class="section-title accordion-toggle" type="button" data-accordion="advancedPanel" aria-expanded="false">
+          <span><svg class="icon sm"><use href="icons/sprite.svg#sliders"/></svg><b data-i18n="advanced">موارد بیشتر</b><small data-i18n="advancedHint">رفتار فارسی و تنظیمات آزمایشی</small></span>
+          <svg class="icon sm accordion-chevron"><use href="icons/sprite.svg#chevron-down"/></svg>
+        </button>
+        <div class="accordion-panel" id="advancedPanel"><div class="accordion-inner advanced-inner">
+          <div class="field">
+            <div class="field-head"><span data-i18n="zwnj">نیم فاصله</span><small data-i18n="zwnjHint">حفظ، حذف یا افزودن هوشمند</small></div>
+            <div class="custom-select" id="zwnjMode"><button class="select-trigger" type="button"><span data-select-label data-i18n="preserve">حفظ</span><svg class="icon sm chev"><use href="icons/sprite.svg#chevron-down"/></svg></button><div class="select-menu"></div></div>
+          </div>
+          <div class="option-row"><div><b data-i18n="bidiRepair">اصلاح چیدمان متن فارسی</b><span data-i18n="bidiRepairHint">برای متن های ترکیبی RTL/LTR از جهت دهی امن استفاده می کند</span></div><button id="bidiRepair" class="switch small" role="switch" aria-checked="false"></button></div>
+          <div class="option-row"><div><b><span data-i18n="layoutEnhance">بهبود چیدمان فارسی</span> <span class="beta-pill">BETA</span></b><span data-i18n="layoutEnhanceHint">برچسب ها و کنترل های فارسی را بدون دستکاری عرض اصلی خواناتر می کند</span></div><button id="layoutEnhance" class="switch small" role="switch" aria-checked="false"></button></div>
+          <div class="option-row"><div><b><span data-i18n="rtlBeta">راست چین خودکار سایت</span> <span class="beta-pill">BETA</span></b><span data-i18n="rtlBetaHint">ممکن است چیدمان بعضی سایت ها را تغییر دهد</span></div><button id="rtlBeta" class="switch small" role="switch" aria-checked="false"></button></div>
+          <div class="option-row"><div><b data-i18n="subdomains">اعمال روی زیردامنه ها</b><span>blog.example.com</span></div><button id="includeSubdomains" class="switch small" role="switch" aria-checked="false"></button></div>
+        </div></div>
+      </section>
+
+      <div class="safe-note" data-tab-panel="localize"><svg class="icon sm"><use href="icons/sprite.svg#shield-check"/></svg><span data-i18n="safeIcons">Font Awesome، Material Icons، Lucide، کد و SVG محافظت می شوند.</span></div>
+    </div>
+  </main>
+
+  <div id="selectBackdrop" class="select-backdrop"></div>
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="drawer" class="drawer glass" aria-hidden="true">
+    <div class="drawer-head"><div><b>پرشین یار</b><span data-i18n="extensionSettings">تنظیمات افزونه</span></div><button id="closeDrawer" class="icon-button" type="button"><svg class="icon"><use href="icons/sprite.svg#x"/></svg></button></div>
+    <div class="drawer-section site-pause-section">
+      <div class="drawer-toggle-row"><div><b data-i18n="sitePause">مکث پرشین یار روی این سایت</b><span data-i18n="sitePauseHint">همه تغییرات موقتا خاموش می شوند اما تنظیماتت حفظ می شود.</span></div><button id="sitePaused" class="switch small" role="switch" aria-checked="false" aria-label="Pause PersianYar on this site"></button></div>
+    </div>
+    <div class="drawer-section"><label data-i18n="appearance">ظاهر</label><div class="theme-switcher" id="themeSwitcher"><button class="theme-option" data-theme-value="system"><svg class="icon sm"><use href="icons/sprite.svg#monitor"/></svg><span data-i18n="system">سیستم</span></button><button class="theme-option" data-theme-value="light"><svg class="icon sm"><use href="icons/sprite.svg#sun"/></svg><span data-i18n="light">روشن</span></button><button class="theme-option" data-theme-value="dark"><svg class="icon sm"><use href="icons/sprite.svg#moon"/></svg><span data-i18n="dark">تیره</span></button></div></div>
+    <div class="drawer-section"><label data-i18n="uiLanguage">زبان افزونه</label><div class="language-switcher" id="uiLanguage"><button data-locale="fa">فارسی</button><button data-locale="en">English</button><button data-locale="ar">العربية</button><button data-locale="zh">中文</button></div></div>
+    <div class="drawer-section"><label data-i18n="uiFontSize">اندازه فونت خود افزونه</label><div class="ui-size-row"><button id="uiSizeMinus" class="icon-button" type="button">−</button><output id="uiSizeValue">13px</output><button id="uiSizePlus" class="icon-button" type="button">+</button></div></div>
+    <div class="drawer-actions"><button id="openOptions" class="btn" type="button"><svg class="icon sm"><use href="icons/sprite.svg#settings"/></svg><span data-i18n="manageSites">مدیریت سایت ها</span></button><button id="resetSite" class="btn danger" type="button"><svg class="icon sm"><use href="icons/sprite.svg#rotate-ccw"/></svg><span data-i18n="resetSite">بازنشانی این سایت</span></button></div>
+  </aside>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <div id="uiTooltip" class="ui-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <div id="localizationGuideBackdrop" class="guide-backdrop" aria-hidden="true"></div>
+  <section id="localizationGuideModal" class="guide-modal glass" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="localizationGuideTitle">
+    <header class="guide-head">
+      <div><b id="localizationGuideTitle" data-i18n="supportedSitesTitle">سایت های پشتیبانی شده</b><span data-i18n="supportedSitesSubtitle">پک های اختصاصی بومی سازی رابط کاربری</span></div>
+      <button id="closeLocalizationGuide" class="icon-button" type="button" aria-label="Close"><svg class="icon"><use href="icons/sprite.svg#x"/></svg></button>
+    </header>
+    <div class="guide-stats"><span><b id="supportedSiteCount">0</b><small data-i18n="supportedSitesCountLabel">سایت / سرویس</small></span><span><b id="supportedPhraseCount">0</b><small data-i18n="supportedPhrasesCountLabel">عبارت آفلاین</small></span></div>
+    <div class="guide-search"><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input id="supportedSiteSearch" type="search" autocomplete="off" placeholder="جستجوی سایت..." aria-label="Search supported sites"><kbd id="supportedSiteResultCount">0</kbd></div>
+    <div id="supportedSiteList" class="guide-list" role="list"></div>
+    <div id="supportedSiteEmpty" class="guide-empty hidden"><svg class="icon"><use href="icons/sprite.svg#search"/></svg><span data-i18n="supportedSitesEmpty">سایتی با این عبارت پیدا نشد.</span></div>
+  </section>
+
+
+  <div id="motionGuideBackdrop" class="guide-backdrop" aria-hidden="true"></div>
+  <section id="motionGuideModal" class="guide-modal motion-guide-modal glass" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="motionGuideTitle">
+    <header class="guide-head"><div><b id="motionGuideTitle" data-i18n="motionGuideTitle">راهنمای انیمیشن نرم</b><span data-i18n="motionGuideSubtitle">هر افکت مستقل است و می توانی فقط موارد دلخواه را روشن نگه داری.</span></div><button id="closeMotionGuide" class="icon-button" type="button" aria-label="Close"><svg class="icon"><use href="icons/sprite.svg#x"/></svg></button></header>
+    <div class="motion-help-list">
+      <article><b>Safe polygon</b><p data-i18n="motionHelpSafeOn">روشن: حرکت موس از دکمه به منوی hover فرصت امن دارد و منو ناگهانی بسته نمی شود.</p><small data-i18n="motionHelpSafeOff">خاموش: رفتار اصلی سایت بدون محافظ مسیر موس باقی می ماند.</small></article>
+      <article><b>Stagger</b><p data-i18n="motionHelpStaggerOn">روشن: چند آیتم اول منو با تاخیر خیلی کوتاه و فقط با opacity وارد می شوند.</p><small data-i18n="motionHelpStaggerOff">خاموش: همه آیتم ها همزمان ظاهر می شوند.</small></article>
+      <article><b>Cross-fade</b><p data-i18n="motionHelpCrossOn">روشن: شمارنده و متن های وضعیت بدون پرش محو و ظاهر می شوند.</p><small data-i18n="motionHelpCrossOff">خاموش: تغییر متن همان رفتار پیش فرض سایت را دارد.</small></article>
+      <article><b>Morph</b><p data-i18n="motionHelpMorphOn">روشن: تغییر وضعیت دکمه یک بازخورد خیلی کوتاه می گیرد.</p><small data-i18n="motionHelpMorphOff">خاموش: هیچ scale اضافه ای برای تغییر state اجرا نمی شود.</small></article>
+      <article><b>Shared layout</b><p data-i18n="motionHelpSharedOn">روشن: جابه جایی کوتاه آیتم های شناور نرم تر دیده می شود.</p><small data-i18n="motionHelpSharedOff">خاموش: موقعیت جدید مستقیم اعمال می شود.</small></article>
+      <article><b>Origin-aware pop</b><p data-i18n="motionHelpPopOn">روشن: منو از نزدیکی نقطه کلیک با opacity/scale سبک باز می شود.</p><small data-i18n="motionHelpPopOff">خاموش: منو با انیمیشن اصلی سایت باز می شود.</small></article>
+      <article><b>Rubber band</b><p data-i18n="motionHelpRubberOn">روشن: لمس یا کلیک بازخورد شفافیت کوتاه دارد؛ بدون جابه جایی.</p><small data-i18n="motionHelpRubberOff">خاموش: بازخورد اضافی اجرا نمی شود.</small></article>
+      <article><b data-i18n="motionList">ورود نرم لیست ها</b><p data-i18n="motionListHint">آیتم های تازه فقط با opacity ظاهر می شوند و هیچ transform مکانی ندارند.</p></article>
+      <article><b data-i18n="motionShimmer">Shimmer بارگذاری</b><p data-i18n="motionShimmerHint">فقط روی اسکلت های بارگذاری واقعی اجرا می شود تا صفحه بی دلیل سنگین نشود.</p></article>
+      <article><b>Tooltip intent delay</b><p>اولین تولتیپ یک گروه بعد از مکث کوتاه ظاهر می شود؛ بعد از باز شدن یکی، تولتیپ های همان گروه تا چند ثانیه بدون تاخیر باز می شوند.</p></article>
+      <article><b>Tabular nums + Scroll fade</b><p>اعداد پویا عرض ثابت می گیرند و لیست قابل اسکرول با Fade لبه، ادامه محتوا را نشان می دهد.</p></article>
+      <article><b>Shared element + Shared layout</b><p>در جزئیات تصویری و جابه جایی آیتم های شناور، پیوستگی بصری با FLIP سبک و compositor-first ایجاد می شود.</p></article>
+    </div>
+  </section>
+
+  <div id="cursorSheetBackdrop" class="cursor-sheet-backdrop" aria-hidden="true"></div>
+  <section id="cursorSheet" class="cursor-bottom-sheet" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cursorSheetTitle">
+    <header class="cursor-sheet-head">
+      <span class="cursor-sheet-grabber" aria-hidden="true"></span>
+      <div><b id="cursorSheetTitle">انتخاب موس سفارشی</b><small id="cursorSheetSubtitle">۴۲ قالب · پیش نمایش زنده · کش محلی</small></div>
+      <button id="closeCursorSheet" class="icon-button" type="button" aria-label="Close"><svg class="icon"><use href="icons/sprite.svg#x"/></svg></button>
+    </header>
+    <div class="cursor-sheet-tools">
+      <label class="cursor-search"><svg class="icon sm"><use href="icons/sprite.svg#search"/></svg><input id="cursorPackSearch" type="search" autocomplete="off" placeholder="جستجوی macOS، Bibata، رنگ..." aria-label="Search cursor packs"></label>
+      <div id="cursorGroupFilters" class="cursor-group-filters" role="tablist" aria-label="Cursor families"></div>
+    </div>
+    <div id="cursorPackScroll" class="cursor-pack-scroll">
+      <div id="cursorPackGrid" class="cursor-pack-grid" role="listbox" aria-label="Cursor packs"></div>
+      <div id="cursorPackEmpty" class="cursor-pack-empty hidden">قالبی با این جستجو پیدا نشد.</div>
+    </div>
+  </section>
+
+  <script src="site-storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
